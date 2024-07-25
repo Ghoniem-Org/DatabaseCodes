@@ -1,6 +1,0 @@
-Optimized parameters [a, c, d]:: [8.73725807e+00 8.73285599e-03 8.54051043e+02]
-R-squared:: {0.886139257269581}
-Reduced chi-squared:: {190.3245245752672}
-Optimized parameters fro trans cracks [a, c, d]:: [7.15876471e+00 1.39373419e-02 8.86068887e+02]
-R-squared:: {0.886139257269581}
-Reduced chi-squared:: {190.3245245752672}
