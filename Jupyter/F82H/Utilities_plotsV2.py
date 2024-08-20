@@ -137,14 +137,15 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Plot fit and confidence intervals from fitting result
-def plot_fit_and_conf(x, y, fit_result, sigma=2, legend=True, legend_font_size=16, legend_loc='upper right', legend_num_cols=2,\
-           fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
+def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, legend_font_size=16, legend_loc='upper right', legend_num_cols=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
 
-    # Regression line
-    plt.plot(x, fit_result.best_fit, color='black', label='Data Fit')
+    # Regression curve
+    fit_for_x = fit_result.eval(fit_result.params, x=x)
+    plt.plot(x, fit_for_x, color='black', label='Data Fit')
+    
     # Confidence interval
-    dely = fit_result.eval_uncertainty(sigma=sigma)
-    plt.fill_between(x, fit_result.best_fit-dely, fit_result.best_fit+dely,\
+    dely = fit_result.eval_uncertainty(sigma=sigma, x=x)
+    plt.fill_between(x, fit_for_x-dely, fit_for_x+dely,\
                      color=conf_int_fill_color, alpha=0.2, label='95.45% Conf. Int.')
 
     if legend:
