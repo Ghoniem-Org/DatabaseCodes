@@ -9,6 +9,8 @@ import sympy
 from sympy import Symbol, Poly, N
 from IPython.display import display, Markdown, HTML
 import string
+
+
 abet_list = list(string.ascii_lowercase)
 # abet_list stores the following for use in polynomial generation:
 # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -31,7 +33,7 @@ abet_list = list(string.ascii_lowercase)
 translation_table = {ord(' ') : None, ord(',') : None, ord('.') : None, ord('-') : None, ord('°') : None, ord('\'') : None, ord('"') : None,\
                      ord('(') : None, ord(')') : None, ord('[') : None, ord(']') : None, ord('{') : None, ord('}') : None}
 
-def load_data(filename, sheet_name, header_rows_list=[1, 3], num_data_rows=20, room_temp=293):
+def load_data(filename, sheet_name, header_rows_list=[1, 3], num_data_rows=20):
 
     # Column labels, used to construct variable names
     # Variable names that mirror the column labels, only removing non-anumeric characters in the translation_table
@@ -60,7 +62,7 @@ def load_data(filename, sheet_name, header_rows_list=[1, 3], num_data_rows=20, r
     else:
         raise ValueError("header_rows_list bst be a list containing a minibm of 1 and a maxibm of 2 row integers!")
         
-    temp_data = pd.read_excel(filename, sheet_name=sheet_name, header=header_rows_list[-1]-1, nrows=num_data_rows, usecols=cols_with_data).replace('RT', room_temp)
+    temp_data = pd.read_excel(filename, sheet_name=sheet_name, header=header_rows_list[-1]-1, nrows=num_data_rows, usecols=cols_with_data).replace('RT', 293)
     temp_data.columns = var_names
     display(pd.DataFrame(temp_data))
     variables = [temp_data[col].dropna().to_numpy() for col in var_names]
@@ -164,17 +166,19 @@ def transition(x, a=a_default_tran, b=b_default_tran, c=c_default_tran, d=d_defa
 ###################################################################################################
 
 # Calculate confidence intervals
-def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', fit_fun_args_and_initials={}, 
-                               material_name=None, property_name=None, eq_digits=6, print_bool=False):
+# def get_model_fit(x, y, fit_func='poly', method='leastsq', fit_initials={}, 
+#                                material_name, property_name, print_bool=True):
+def get_model_fit(x, y, material_name, property_name, fit_func='poly', method='leastsq', fit_initials={}, print_bool=True):
 
+    eq_digits=6
     # Model fitting based on specified fitting function ('fit_func') and fitting method ('method')
     if fit_func == 'poly':
-        poly_deg = len(fit_fun_args_and_initials)-1
+        poly_deg = len(fit_initials)-1
         model = Model(polynomial_generator(poly_deg))
         
         initial_guess_args = ''
-        for arg, initial in fit_fun_args_and_initials.items():
-            if not arg == list(fit_fun_args_and_initials)[-1]:
+        for arg, initial in fit_initials.items():
+            if not arg == list(fit_initials)[-1]:
                 initial_guess_args += arg + '=' + str(initial) + ", "
             else:
                 initial_guess_args += arg + '=' + str(initial)
@@ -188,7 +192,7 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', fit_fun_
 
         default_args = {'c': c_default, 'a': a_default, 'b': b_default}
         
-        for arg, initial in fit_fun_args_and_initials.items():
+        for arg, initial in fit_initials.items():
             if arg == 'c':
                 params.add('c', value=initial, min=1e-10, max=1e3)
             elif arg == 'a':
@@ -197,7 +201,7 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', fit_fun_
                 params.add('b', value=initial)
 
         for arg, initial in default_args.items():
-            if arg not in fit_fun_args_and_initials:
+            if arg not in fit_initials:
                 if arg == 'c':
                     params.add('c', value=c_default, vary=False)
                 elif arg == 'a':
@@ -214,11 +218,11 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', fit_fun_
 
         default_args = {'a': a_default_exp, 'b': b_default_exp, 'c': c_default_exp, 'd': d_default_exp}
         
-        for arg, initial in fit_fun_args_and_initials.items():
+        for arg, initial in fit_initials.items():
             params.add(arg, value=initial)
             
         for arg, initial in default_args.items():
-            if arg not in fit_fun_args_and_initials:
+            if arg not in fit_initials:
                 params.add(arg, value=initial, vary=False)
                 
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
@@ -230,11 +234,11 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', fit_fun_
 
         default_args = {'a': a_default_tran, 'b': b_default_tran, 'c': c_default_tran, 'd': d_default_tran, 'e': e_default_tran}
         
-        for arg, initial in fit_fun_args_and_initials.items():
+        for arg, initial in fit_initials.items():
             params.add(arg, value=initial)
             
         for arg, initial in default_args.items():
-            if arg not in fit_fun_args_and_initials:
+            if arg not in fit_initials:
                 params.add(arg, value=initial, vary=False)
                 
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
@@ -246,7 +250,7 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', fit_fun_
     if print_bool:
         
         display(HTML("<hr>"))
-        display(Markdown(f'**Fitting parameters for {material_name} {property_name}** \n'))
+        display(Markdown(f'**Fitting parameters for  {property_name}** \n'))
         print(result.fit_report())
         display(HTML("<hr>"))
         display(Markdown(f'**The equation for {material_name} {property_name} is:**\n'))
@@ -286,4 +290,7 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', fit_fun_
         else:
             pass # valid fit_func string checked in previous if block
             
+             #     pass # valid fit_func string checked in previous if block
+        #     # Display the result in a centered box
     return result
+
