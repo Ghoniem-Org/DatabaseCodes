@@ -253,7 +253,7 @@ def get_model_fit(x, y, material_name, property_name, fit_func='poly', method='l
         display(Markdown(f'**Fitting parameters for  {property_name}** \n'))
         print(result.fit_report())
         display(HTML("<hr>"))
-        display(Markdown(f'**The equation for {material_name} {property_name} is:**\n'))
+        display(Markdown(f'**The equation for  {property_name} is:**\n'))
         
         if fit_func == 'poly':
             

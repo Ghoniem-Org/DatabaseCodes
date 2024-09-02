@@ -6,23 +6,29 @@ import matplotlib.pyplot as plt
 from lmfit import Model
 # Slightly modified version from Professor Ghoniem
 from matplotlib import pyplot as plt
+import itertools
 
-    
-def plot_data(x_data_list, y_data_list,T, fit_result, x_label, y_label, x_lim, y_lim, data_labels, material_property):
+def plot_data(x_data_list, y_data_list,T, fit_result, x_label, y_label, x_lim, y_lim, data_labels, material_property, f_size, legend_size, m_size):
     
     def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
                       x_label=x_label, y_label=y_label, title=material_property,
-                      scale='linear', font_size=16, xlim=x_lim, ylim=y_lim, 
+                      scale='linear', font_size=f_size, xlim=x_lim, ylim=y_lim, 
                       grid=True, legend=True, data_labels=data_labels, fit_labels=None,
-                      data_colors=None, fit_colors=None, data_marker_sizes=None, 
-                      fit_line_widths=None, x_label_font_size=16, y_label_font_size=16, 
-                      title_font_size=16, legend_font_size=12, legend_loc='lower left', legend_num_cols=2):
+                      data_colors=None, fit_colors=None, data_marker_sizes=m_size, marker_styles=None,
+                      fit_line_widths=None, x_label_font_size=f_size, y_label_font_size=f_size, 
+                      title_font_size=f_size, legend_font_size=legend_size, legend_loc='lower left', legend_num_cols=2):
 
         if data_colors is None:
             data_colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
         
         if fit_colors is None:
             fit_colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+            
+# Define a list of markers (solid and without fill)
+        if marker_styles is None:
+            markers = ['o', 's', 'D', '^', 'v', '<', '>', 'P', 'X', 'o', 's', 'D', '^', 'v', '<', '>', 'P', 'X']
+            marker_styles = itertools.cycle(markers)  # Cycle through markers
+    
   
         plt.figure(figsize=(6, 4), dpi=300)
 
@@ -37,13 +43,17 @@ def plot_data(x_data_list, y_data_list,T, fit_result, x_label, y_label, x_lim, y
                 data_colors = ['blue'] * len(x_data_list)
 
             if data_marker_sizes is None:
-                data_marker_sizes = [20] * len(x_data_list)
+                data_marker_sizes = [m_size] * len(x_data_list)
             
             if len(x_data_list) != len(y_data_list):
                 raise ValueError("x_data_list and y_data_list must have the same length.")
             
             for i, (x_data, y_data) in enumerate(zip(x_data_list, y_data_list)):
-                plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], s=data_marker_sizes[i])
+                if i < len(data_labels) and i < len(data_colors):
+                    plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], s=m_size, marker=next(marker_styles))
+                else:
+            # Handle the case where labels or colors are missing
+                    plt.scatter(x_data, y_data, s=m_size, marker=next(marker_styles))  # without label or color
 
         # Ensure the fit lists have the same length, and scatter plot fit lines if provided
         if x_fit_list is not None and y_fit_list is not None:
@@ -64,10 +74,12 @@ def plot_data(x_data_list, y_data_list,T, fit_result, x_label, y_label, x_lim, y
             for i, (x_fit, y_fit) in enumerate(zip(x_fit_list, y_fit_list)):
                 plt.plot(x_fit, y_fit, label=fit_labels[i], color=fit_colors[i], linewidth=fit_line_widths[i])
 
-        plt.xlabel(x_label, fontsize=x_label_font_size)
-        plt.ylabel(y_label, fontsize=y_label_font_size)
-        plt.title(title, fontsize=title_font_size)
-        
+        plt.xlabel(x_label, fontsize=f_size)
+        plt.ylabel(y_label, fontsize=f_size)
+        plt.title(title, fontsize=f_size)
+        plt.tick_params(axis='x', labelsize=f_size)  
+        plt.tick_params(axis='x', labelsize=f_size)  
+
         if scale == 'linear':
             plt.xscale('linear')
             plt.yscale('linear')
@@ -93,7 +105,7 @@ def plot_data(x_data_list, y_data_list,T, fit_result, x_label, y_label, x_lim, y
             plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
     # Plot fit and confidence intervals from fitting result
-    def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, legend_font_size=12, 
+    def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, legend_font_size=legend_size, 
                           legend_loc='lower left', legend_num_cols=2, fit_line_color='black',
                           pred_int_fill_color='grey', conf_int_fill_color='blue'):
         # Regression curve
@@ -111,6 +123,6 @@ def plot_data(x_data_list, y_data_list,T, fit_result, x_label, y_label, x_lim, y
     # Call the plotting functions
     custom_multi_plot(x_data_list, y_data_list)
     plot_fit_and_conf(T, fit_result)
-    
-    # Display the plot
     plt.show()
+
+
