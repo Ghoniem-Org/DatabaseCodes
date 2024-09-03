@@ -60,13 +60,13 @@ def load_data(filename, sheet_name, header_rows_list=[1, 3], num_data_rows=20, r
     # Temporarily store the columnar Excel data
     # with pd.option_context('future.no_silent_downcasting', True):
     temp_data = pd.read_excel(filename, sheet_name=sheet_name, header=header_rows_list[-1]-1, nrows=num_data_rows, usecols=cols_with_data).replace('RT', room_temp)
-    
+  
     temp_data.columns = var_names
     if display_data_table_bool:
         display(pd.DataFrame(temp_data))
     
     exec(", ".join(var_names) + " = [temp_data[col].dropna().to_numpy() for col in temp_data]")
-
+    print(temp_data)
     return var_names, list(eval(", ".join(var_names)))
 
 
