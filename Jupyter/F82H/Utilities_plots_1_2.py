@@ -15,7 +15,7 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
                       grid=True, legend=True, data_labels=None, fit_labels=None,
                       data_colors=None, fit_colors=None, data_marker_sizes=None, 
                       fit_line_widths=None, x_label_font_size=16, y_label_font_size=16, 
-                      title_font_size=16, legend_font_size=16, legend_loc='upper right', legend_num_cols=2):
+                      title_font_size=16, legend_font_size=16, legend_loc='lower left', legend_num_cols=2):
 
     plt.figure(figsize=(6, 4), dpi=300)
 
@@ -86,7 +86,7 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Plot fit and confidence intervals from fitting result
-def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_font_size=16, legend_loc='upper right', legend_num_cols=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
+def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_font_size=16, legend_loc='lower left', legend_num_cols=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
 
     # Regression curve
     fit_for_x = fit_result.eval(fit_result.params, x=x)
@@ -101,7 +101,7 @@ def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit',
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Wrapper function for convenient plotting
-def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, x_label, y_label, x_lim, y_lim, data_labels, material_property):
+def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, data_marker_sizes, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc='lower left'):
     # Call the plotting functions
-    custom_multi_plot(x_data_list, y_data_list)
-    plot_fit_and_conf(x_for_fit_plot, fit_result)
+    custom_multi_plot(x_data_list, y_data_list, data_marker_sizes=data_marker_sizes, font_size=font_size, x_label_font_size=font_size, y_label_font_size=font_size, title_font_size=font_size, legend_font_size=font_size, title=title, legend_loc=legend_loc)
+    plot_fit_and_conf(x_for_fit_plot, fit_result, legend_font_size=font_size, legend_loc=legend_loc)
