@@ -67,7 +67,7 @@ def load_data(filename, sheet_name, header_rows_list=[1, 3], num_data_rows=20, r
     
     variables = [temp_data[col].dropna().to_numpy() for col in var_names]
 
-    return var_names, variables
+    return var_names, variables, temp_data
 
 
 # Concatenate and sort lists of x and y data
