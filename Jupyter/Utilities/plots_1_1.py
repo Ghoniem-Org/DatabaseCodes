@@ -9,7 +9,7 @@ from lmfit import Model
 
 marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*', 'x')) 
 
-def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
+def data_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
                       x_label='X-axis', y_label='Y-axis', title='Plot',
                       scale='linear', font_size=16, x_lim=None, y_lim=None, 
                       grid=True, legend=True, data_labels=None, fit_labels=None,
@@ -30,7 +30,7 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
             data_colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
 
         if data_marker_sizes is None:
-            data_marker_sizes = [20] * len(x_data_list)
+            data_marker_sizes = [60] * len(x_data_list)
         
         if len(x_data_list) != len(y_data_list):
             raise ValueError("x_data_list and y_data_list must have the same length.")
@@ -86,7 +86,7 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Plot fit and confidence intervals from fitting result
-def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_font_size=16, legend_loc='lower left', legend_num_cols=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
+def fit_plot(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_font_size=16, legend_loc='lower left', legend_num_cols=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
 
     # Regression curve
     fit_for_x = fit_result.eval(fit_result.params, x=x)
@@ -103,5 +103,5 @@ def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit',
 # Wrapper function for convenient plotting
 def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, data_marker_sizes, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc='lower left'):
     # Call the plotting functions
-    custom_multi_plot(x_data_list, y_data_list, font_size=font_size, data_marker_sizes=data_marker_sizes, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=font_size, title=title, legend_loc=legend_loc)
-    plot_fit_and_conf(x_for_fit_plot, fit_result, legend_font_size=font_size, legend_loc=legend_loc)
+    data_plot(x_data_list, y_data_list, font_size=font_size, data_marker_sizes=data_marker_sizes, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=font_size, title=title, legend_loc=legend_loc)
+    fit_plot(x_for_fit_plot, fit_result, legend_font_size=font_size, legend_loc=legend_loc)
