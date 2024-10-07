@@ -101,7 +101,9 @@ def fit_plot(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_f
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Wrapper function for convenient plotting
-def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, data_marker_sizes, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc, legend_font_size):
+def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, data_marker_sizes, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc, legend_font_size, scale = False):
     # Call the plotting functions
-    data_plot(x_data_list, y_data_list, font_size=font_size, data_marker_sizes=data_marker_sizes, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc)
+    if not scale:
+        scale = 'linear'
+    data_plot(x_data_list, y_data_list, font_size=font_size, data_marker_sizes=data_marker_sizes, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc, scale= scale)
     fit_plot(x_for_fit_plot, fit_result, legend_font_size=legend_font_size, legend_loc=legend_loc)
