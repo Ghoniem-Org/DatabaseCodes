@@ -82,24 +82,6 @@ def concatenate_and_sort(x_list, y_list):
 
     return x_sorted, y_sorted
 
-##################################################################################################
-# (using the built-in Polynomial model from LMFIT now instead)
-# Polynomial function generator of arbitrary degree
-# def polynomial_generator(deg):
-
-#     args_string = ''
-#     func_string = ''
-    
-#     for i in range(0, deg):
-#         args_string += alphabet_list[i] + ', '
-#     args_string += alphabet_list[deg]
-    
-#     for i in range(0, deg-1):
-#         func_string += alphabet_list[i] + '*x**' + str(deg-i) + " + "
-
-#     func_string += alphabet_list[deg-1] + '*x' + " + " + alphabet_list[deg]
-
-#     return eval("lambda x, " + args_string + ": " + func_string)
 
 ##################################################################################################
 # Weibull distribution model function
@@ -140,7 +122,7 @@ def weibull(x, p_0=p_0_default_w, p_1=p_1_default_w, p_2=p_2_default_w):
 p_0_default_e = 0
 p_1_default_e = 0
 p_2_default_e = 1
-p_3_default_e = 1 
+p_3_default_e = 1
 def exponential(x, p_0=p_0_default_e, p_1=p_1_default_e, p_2=p_2_default_e, p_3=p_3_default_e):
     return p_0 + (p_1 + p_2 * x) * np.exp(p_3 * x)
 
@@ -165,8 +147,23 @@ def transition(x, p_0=p_0_default_t, p_1=p_1_default_t, p_2=p_2_default_t, p_3=p
 ###################################################################################################
 
 # Calculate confidence intervals
-def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_initials=None, 
+def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
                                material_name=None, property_name=None, eq_digits=6, print_bool=False, fit_symbol='T'):
+
+    # Utility funciton to assemble parameters for LMFIT
+    def assemble_params(num_params, func_suffix):
+        params = Parameters()
+        
+        for i in range(0, num_params):
+            if not np.isnan(param_initials[i]):
+                params.add('p_' + str(i), value=param_initials[i])
+            else:
+                if param_defaults is None:
+                    params.add('p_' + str(i), value=eval('p_' + str(i) + '_default_' + func_suffix), vary=False)
+                else:
+                    params.add('p_' + str(i), value=param_defaults[i], vary=False)
+                        
+        return params
 
     # Model fitting based on specified fitting function ('fit_func') and fitting method ('method')
     if fit_func == 'poly':
@@ -188,23 +185,13 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
         params = Parameters()
 
         if not len(param_initials) == 3:
-            raise ValueError("Must give 3 parameters to use the weibull fitting function. Parameters may include NaN to fix a variable to its constant default.")
-            
-        if not np.isnan(param_initials[0]):
-            params.add('p_0', value=param_initials[0], min=1e-10, max=1e3)
-        else:
-            params.add('p_0', value=p_0_default_w, vary=False)
+            raise ValueError("Must give 3 initial parameters to use the weibull fitting function. Initial params may include NaN to fix a variable to its constant default.")
 
-        if not np.isnan(param_initials[1]):
-            params.add('p_1', value=param_initials[1])
-        else:
-            params.add('p_1', value=p_1_default_w, vary=False)
+        if not param_defaults is None:
+            if not len(param_defaults) == 3:
+                raise ValueError("If param_defaults is not None, must give 3 default parameters to prescribe defaults to the weibull fitting function.")
 
-        if not np.isnan(param_initials[2]):
-            params.add('p_2', value=param_initials[2], min=1e-10, max=1e3)
-        else:
-            params.add('p_2', value=p_2_default_w, vary=False)
-
+        params = assemble_params(3, 'w')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
 
     elif fit_func == 'exponential':
@@ -213,30 +200,13 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
         params = Parameters()
 
         if not len(param_initials) == 4:
-            raise ValueError("Must give 4 parameters to use the exponential fitting function. Parameters may include NaN to fix a variable to its constant default.")
+            raise ValueError("Must give 4 initial parameters to use the exponential fitting function. Initial params may include NaN to fix a variable to its constant default.")
 
-        # default_args = {'a': p_0_default_exp, 'b': p_1_default_exp, 'c': p_2_default_exp, 'd': p_3_default_exp}
+        if not param_defaults is None:
+            if not len(param_defaults) == 4:
+                raise ValueError("If param_defaults is not None, must give 4 default parameters to prescribe defaults to the exponential fitting function.")
 
-        if not np.isnan(param_initials[0]):
-            params.add('p_0', value=param_initials[0])
-        else:
-            params.add('p_0', value=p_0_default_e, vary=False)
-
-        if not np.isnan(param_initials[1]):
-            params.add('p_1', value=param_initials[1])
-        else:
-            params.add('p_1', value=p_1_default_e, vary=False)
-
-        if not np.isnan(param_initials[2]):
-            params.add('p_2', value=param_initials[2])
-        else:
-            params.add('p_2', value=p_2_default_e, vary=False)
-
-        if not np.isnan(param_initials[3]):
-            params.add('p_3', value=param_initials[3])
-        else:
-            params.add('p_3', value=p_3_default_e, vary=False)
-            
+        params = assemble_params(4, 'e')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
         
     elif fit_func == 'transition':
@@ -245,33 +215,13 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
         params = Parameters()
 
         if not len(param_initials) == 5:
-            raise ValueError("Must give 5 parameters to use the transition fitting function. Parameters may include NaN to fix a variable to its constant default.")
+            raise ValueError("Must give 5 initial parameters to use the transition fitting function. Initial params may include NaN to fix a variable to its constant default.")
 
-        if not np.isnan(param_initials[0]):
-            params.add('p_0', value=param_initials[0])
-        else:
-            params.add('p_0', value=p_0_default_t, vary=False)
+        if not param_defaults is None:
+            if not len(param_defaults) == 5:
+                raise ValueError("If param_defaults is not None, must give 5 default parameters to prescribe defaults to the transition fitting function.")
 
-        if not np.isnan(param_initials[1]):
-            params.add('p_1', value=param_initials[1])
-        else:
-            params.add('p_1', value=p_1_default_t, vary=False)
-
-        if not np.isnan(param_initials[2]):
-            params.add('p_2', value=param_initials[2])
-        else:
-            params.add('p_2', value=p_2_default_t, vary=False)
-
-        if not np.isnan(param_initials[3]):
-            params.add('p_3', value=param_initials[3])
-        else:
-            params.add('p_3', value=p_3_default_t, vary=False)
-
-        if not np.isnan(param_initials[4]):
-            params.add('p_4', value=param_initials[4])
-        else:
-            params.add('p_4', value=p_4_default_t, vary=False)
-                
+        params = assemble_params(5, 't')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
         
     else:
@@ -293,8 +243,8 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
             latex_list = []
             c_list = ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7']
             for i in range(0, poly_deg+1):
-                  latex_list.insert(0, latex(N(result.params[c_list[poly_deg-i]].value, eq_digits) * sym**(poly_deg-i), min=0, max=0))
-           
+                latex_list.insert(0, latex(N(result.params[c_list[i]].value, eq_digits) * sym**i, min=0, max=0))
+            
             latex_to_print = ''
             for i in range(0, poly_deg+1):
                 if "+" == latex_list[i].lstrip()[0] or "-" == latex_list[i].lstrip()[0]:
@@ -303,6 +253,10 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
                     latex_to_print += "+ " + latex_list[i] + " "
                     
             latex_to_print = '\\boxed{ ' + latex_to_print + ' }'
+            
+            if '\cdot' in latex_to_print:
+                latex_to_print = latex_to_print.replace('\cdot', '\\times')
+            
             display(Latex(f'${latex_to_print}$'))
         
         elif fit_func == 'weibull':
@@ -315,6 +269,8 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
             latex_to_print = '\\boxed{ '\
             + latex((p_2_fit / p_0_fit) * ((sym - p_1_fit) / p_0_fit)**(p_2_fit - 1) * sympy.exp(-((sym - p_1_fit) / p_0_fit)**p_2_fit), min=0, max=0)\
             + ' }'
+            if '\cdot' in latex_to_print:
+                latex_to_print = latex_to_print.replace('\cdot', '\\times')
             
             display(Latex(f'${latex_to_print}$'))
             
@@ -336,7 +292,9 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
                 exp_term_latex = "+ " + exp_term_latex
             
             latex_to_print = '\\boxed{ ' + a_term_latex + exp_term_latex + ' }'
-            
+            if '\cdot' in latex_to_print:
+                latex_to_print = latex_to_print.replace('\cdot', '\\times')
+                
             display(Latex(f'${latex_to_print}$'))
 
         elif fit_func == 'transition':
@@ -358,8 +316,10 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
             if "+" != tanh_term_latex.lstrip()[0] and "-" != tanh_term_latex.lstrip()[0]:
                 tanh_term_latex = "+ " + tanh_term_latex
             
-            latex_to_print = '\\boxed{ ' a_term_latex + tanh_term_latex + ' }'
-            
+            latex_to_print = '\\boxed{ ' + a_term_latex + tanh_term_latex + ' }'
+            if '\cdot' in latex_to_print:
+                latex_to_print = latex_to_print.replace('\cdot', '\\times')
+                
             display(Latex(f'${latex_to_print}$'))
             
         else:

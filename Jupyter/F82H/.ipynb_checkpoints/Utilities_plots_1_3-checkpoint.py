@@ -13,9 +13,9 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
                       x_label='X-axis', y_label='Y-axis', title='Plot',
                       scale='linear', font_size=16, x_lim=None, y_lim=None, 
                       grid=True, legend=True, data_labels=None, fit_labels=None,
-                      data_colors=None, fit_colors=None, data_marker_size=None, 
-                      fit_line_widths=None, x_label_font_size=16, y_label_font_size=16, 
-                      title_font_size=16, legend_font_size=16, legend_loc='lower left', legend_num_cols=2):
+                      data_colors=None, fit_colors=None, marker_size=20, 
+                      fit_line_width=3, x_label_font_size=16, y_label_font_size=16, 
+                      title_font_size=16, legend_font_size=8, legend_loc='best', legend_num_cols=2):
 
     plt.figure(figsize=(6, 4), dpi=300)
 
@@ -28,12 +28,12 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
 
         if data_colors is None:
             data_colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
- 
+        
         if len(x_data_list) != len(y_data_list):
             raise ValueError("x_data_list and y_data_list must have the same length.")
         
         for i, (x_data, y_data) in enumerate(zip(x_data_list, y_data_list)):
-            plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], marker=next(marker_cycle))
+            plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], s=marker_size, marker = next(marker_cycle))
 
     # Ensure the fit lists have the same length, and scatter plot fit lines if provided
     if x_fit_list is not None and y_fit_list is not None:
@@ -45,14 +45,11 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
         if fit_colors is None and x_fit_list is not None and y_fit_list is not None:
             fit_colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
         
-        if fit_line_widths is None and x_fit_list is not None and y_fit_list is not None:
-            fit_line_widths = [3] * len(x_fit_list)
-        
         if x_fit_list is not None and y_fit_list is not None and len(x_fit_list) != len(y_fit_list):
             raise ValueError("x_fit_list and y_fit_list must have the same length.")
         
         for i, (x_fit, y_fit) in enumerate(zip(x_fit_list, y_fit_list)):
-            plt.plot(x_fit, y_fit, label=fit_labels[i], color=fit_colors[i], linewidth=fit_line_widths[i])
+            plt.plot(x_fit, y_fit, label=fit_labels[i], color=fit_colors[i], linewidth=fit_line_width)
 
     plt.xlabel(x_label, fontsize=x_label_font_size)
     plt.ylabel(y_label, fontsize=y_label_font_size)
@@ -83,11 +80,11 @@ def custom_multi_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Plot fit and confidence intervals from fitting result
-def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_font_size=16, legend_loc='lower left', legend_num_cols=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
+def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_font_size=16, legend_loc='lower left', legend_num_cols=2, fit_line_width=3, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
 
     # Regression curve
     fit_for_x = fit_result.eval(fit_result.params, x=x)
-    plt.plot(x, fit_for_x, color='black', label=fit_label)
+    plt.plot(x, fit_for_x, linewidth=fit_line_width, color='black', label=fit_label)
     
     # Confidence interval
     dely = fit_result.eval_uncertainty(sigma=sigma, x=x)
@@ -98,7 +95,7 @@ def plot_fit_and_conf(x, fit_result, sigma=2, legend=True, fit_label='Data Fit',
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Wrapper function for convenient plotting
-def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, m_size, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc='lower left'):
+def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, marker_size, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc='best', legend_font_size=8):
     # Call the plotting functions
-    custom_multi_plot(x_data_list, y_data_list, font_size=font_size, data_marker_size=m_size, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=font_size, title=title, legend_loc=legend_loc)
-    plot_fit_and_conf(x_for_fit_plot, fit_result, legend_font_size=font_size, legend_loc=legend_loc)
+    custom_multi_plot(x_data_list, y_data_list, font_size=font_size, marker_size=marker_size, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc)
+    plot_fit_and_conf(x_for_fit_plot, fit_result, legend_font_size=legend_font_size, legend_loc=legend_loc)

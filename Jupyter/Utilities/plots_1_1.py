@@ -107,3 +107,36 @@ def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, d
         scale = 'linear'
     data_plot(x_data_list, y_data_list, font_size=font_size, data_marker_sizes=data_marker_sizes, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc, scale= scale)
     fit_plot(x_for_fit_plot, fit_result, legend_font_size=legend_font_size, legend_loc=legend_loc)
+
+# Define a function to plot multiple curves
+def plot_multiple_curves(temperatures, shift_percent=0.2):
+    plt.figure()
+    
+    # Plot each curve with a shift in strain values
+    for i, T in enumerate(temperatures):
+        shift = i * shift_percent * TotalElongation(T)  # Shift by 20% of Total Elongation for clarity
+        x_values, y_values = stress_strain_curve(T, shift=shift)
+        plt.plot(x_values, y_values, marker='', linestyle='-', label=f'{T-273} °C')
+    
+    plt.xlabel('Strain [%]', fontsize=16)  # Set font size for x-axis label
+    plt.ylabel('Stress [MPa]', fontsize=16)  # Set font size for y-axis label
+    plt.title('Stress-Strain Curves at Different Temperatures', fontsize=16)  # Set font size for title
+    
+    
+    # Modify legend position and line thickness, and remove data points
+    plt.legend(loc='best', fontsize=10)  # Control legend position (e.g., 'upper right', 'lower left')
+    
+    # Control line thickness
+    for line in plt.gca().get_lines():
+        line.set_linewidth(2)  # Set the line thickness to 2
+    
+    # Control graph size and center it in the page
+    plt.gcf().set_size_inches(10, 6)  # Set figure size (width, height in inches)
+    plt.gcf().subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)  # Centering the graph
+    
+    plt.grid(True)
+    plt.xlim(0, max(x_values) + 5)  # Adjust x-axis limit for better visualization
+    plt.ylim(0, 700)  # Adjust y-axis limit as needed
+    plt.tick_params(axis='both', which='major', labelsize=16)  # Set font size for tick labels
+
+    plt.show()
