@@ -164,6 +164,28 @@ def transition(x, p_0=p_0_default_t, p_1=p_1_default_t, p_2=p_2_default_t, p_3=p
 
 ###################################################################################################
 
+# Define the Dip(T) function based on the provided formula
+#def Dip(T, p):
+#    return p[0] + 0.5 * (p[1] - p[0]) * (1 + np.tanh(T - p[2])) + p[3] - 0.5 * (p[4] - p[3]) * (1 + np.tanh(T - p[5]))
+
+# Dip function
+# The function has two transitions smoothly around x = p_2, and x = p_5, 
+# p_0: Shifts the entire function vertically.
+# p_1: scale value
+# p_4: second scale value
+
+p_0_default = 0
+p_1_default = 1
+p_2_default = 1
+p_3_default = 1
+p_4_default = 1
+p_5_default = 1
+p_6_default = 1
+def dip(x, p_0=p_0_default, p_1=p_1_default, p_2=p_2_default, p_3=p_3_default, p_4=p_4_default,p_5=p_5_default,p_6=p_6_default):
+    return p_0 + p_1 * (1 + np.tanh((x - p_2) / p_3))+ p_4 * (1 + np.tanh((x - p_5) / p_6))
+
+###################################################################################################
+
 # Calculate confidence intervals
 def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_initials=None, 
                                material_name=None, property_name=None, eq_digits=6, print_bool=False, fit_symbol='T'):
@@ -273,9 +295,53 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
             params.add('p_4', value=p_4_default_t, vary=False)
                 
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
+    elif fit_func == 'dip':
+        
+        model = Model(dip)
+        params = Parameters()
+
+        if not len(param_initials) == 7:
+            raise ValueError("Must give 7 parameters to use the dip fitting function. Parameters may include NaN to fix a variable to its constant default.")
+
+        if not np.isnan(param_initials[0]):
+            params.add('p_0', value=param_initials[0])
+        else:
+            params.add('p_0', value=p_0_default, vary=False)
+
+        if not np.isnan(param_initials[1]):
+            params.add('p_1', value=param_initials[1])
+        else:
+            params.add('p_1', value=p_1_default, vary=False)
+
+        if not np.isnan(param_initials[2]):
+            params.add('p_2', value=param_initials[2])
+        else:
+            params.add('p_2', value=p_2_default, vary=False)
+
+        if not np.isnan(param_initials[3]):
+            params.add('p_3', value=param_initials[3])
+        else:
+            params.add('p_3', value=p_3_default, vary=False)
+
+        if not np.isnan(param_initials[4]):
+            params.add('p_4', value=param_initials[4])
+        else:
+            params.add('p_4', value=p_4_default, vary=False)
+            
+        if not np.isnan(param_initials[5]):
+            params.add('p_5', value=param_initials[5])
+        else:
+            params.add('p_5', value=p_5_default, vary=False)
+
+        if not np.isnan(param_initials[6]):
+            params.add('p_6', value=param_initials[6])
+        else:
+            params.add('p_6', value=p_6_default, vary=False)
+                
+        result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
         
     else:
-        raise ValueError("Please give a valid fit_func string among: 'poly', 'weibull', 'exponential', 'transition'!")
+        raise ValueError("Please give a valid fit_func string among: 'poly', 'weibull', 'exponential', 'transition', 'dip'!")
 
     # Printing the fitting parameters and equation
     if print_bool:
@@ -352,13 +418,38 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
             a_term_latex = latex(p_0_fit)
             tanh_term_latex = latex((one_half_times_p_1_minus_p_0_fit + one_half_times_p_2_fit * sym) * (1 + sympy.tanh((sym - p_3_fit) / p_4_fit)), min=0, max=0)
 
+        elif fit_func == 'dip':
+
+            p_0_fit = N(result.params['p_0'].value, eq_digits)
+            p_1_fit = N(result.params['p_1'].value, eq_digits)
+            p_2_fit = N(result.params['p_2'].value, eq_digits)
+            p_3_fit = N(result.params['p_3'].value, eq_digits)
+            p_4_fit = N(result.params['p_4'].value, eq_digits)
+            p_5_fit = N(result.params['p_5'].value, eq_digits)
+            p_6_fit = N(result.params['p_6'].value, eq_digits)
+            
+            # Define the symbol for the variable in the equation
+            sym = Symbol(fit_symbol)
+            
+            # Create the LaTeX representations for each term
+            a_term_latex = latex(p_0_fit)  # Constant term
+            
+            # Tanh terms with proper handling of multiplication and parentheses
+            tanh1_term = p_1_fit * (1 + sympy.tanh((sym - p_2_fit) / p_3_fit))
+            tanh2_term = p_4_fit * (1 + sympy.tanh((sym - p_5_fit) / p_6_fit))
+            
+            # Convert the tanh terms to LaTeX
+            tanh1_term_latex = latex(tanh1_term)
+            tanh2_term_latex = latex(tanh2_term)
+
+            
             if "+" != a_term_latex.lstrip()[0] and "-" != a_term_latex.lstrip()[0]:
                 a_term_latex = "+ " + a_term_latex + " "
 
-            if "+" != tanh_term_latex.lstrip()[0] and "-" != tanh_term_latex.lstrip()[0]:
-                tanh_term_latex = "+ " + tanh_term_latex
+            if "+" != tanh1_term_latex.lstrip()[0] and "-" != tanh1_term_latex.lstrip()[0]:
+                tanh1_term_latex = "+ " + tanh1_term_latex
             
-            latex_to_print = '\\boxed{ ' + a_term_latex + tanh_term_latex + ' }'
+            latex_to_print = '\\boxed{ ' + a_term_latex + tanh1_term_latex + tanh2_term_latex' }'
             
             display(Latex(f'${latex_to_print}$'))
             

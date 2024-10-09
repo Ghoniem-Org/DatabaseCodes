@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 from lmfit import Model
 
 marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*', 'x')) 
-fsize = 16
+fsize1 = 20
+fsize2 = 14
 def data_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
                       x_label='X-axis', y_label='Y-axis', title='Plot',
                       scale='linear', font_size=16, x_lim=None, y_lim=None, 
@@ -145,15 +146,27 @@ def plot_multiple_curves(temperatures, shift_percent=0.2):
 
 def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_range, label=None):
     plt.plot(x_data + shift, y_data, label=label, linewidth=2)
-    plt.xlabel(xlabel, fontsize=fsize, fontname='Times New Roman')
-    plt.ylabel(ylabel, fontsize=fsize, fontname='Times New Roman')
+    
+    # Set x- and y-axis labels font size
+    plt.xlabel(xlabel, fontsize=fsize1, fontname='Times New Roman')
+    plt.ylabel(ylabel, fontsize=fsize1, fontname='Times New Roman')
+    
+    # Set x- and y-limits
     plt.xlim(xlim_range)
     plt.ylim(ylim_range)
-    plt.xticks(np.arange(xlim_range[0], xlim_range[1] + 1, 20))
-    plt.title(title)
+    
+    # Set tick marks font size
+    plt.xticks(np.arange(xlim_range[0], xlim_range[1] + 1, 5), fontsize=fsize1)
+    plt.yticks(fontsize=fsize1)
+    
+    # Set plot title
+    plt.title(title, fontsize=fsize1)
+    
+    # Enable grid
     plt.grid(True)
+    
+    # Add legend if a label is provided, with specific font size for the legend
     if label:
-        plt.legend()  # Add legend to show the labels
-    # Center the plot within the figure
-    plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.15)
-   #plt.show
+        plt.legend(fontsize=fsize2)
+
+    
