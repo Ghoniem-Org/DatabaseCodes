@@ -8,8 +8,9 @@ import matplotlib.pyplot as plt
 from lmfit import Model
 
 marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*', 'x')) 
-fsize1 = 20
-fsize2 = 14
+fsize1 = 24
+fsize2 = 20
+fsize3 = 14
 def data_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
                       x_label='X-axis', y_label='Y-axis', title='Plot',
                       scale='linear', font_size=16, x_lim=None, y_lim=None, 
@@ -156,8 +157,8 @@ def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_
     plt.ylim(ylim_range)
     
     # Set tick marks font size
-    plt.xticks(np.arange(xlim_range[0], xlim_range[1] + 1, 5), fontsize=fsize1)
-    plt.yticks(fontsize=fsize1)
+    plt.xticks(fontsize=fsize2)
+    plt.yticks(fontsize=fsize2)
     
     # Set plot title
     plt.title(title, fontsize=fsize1)
@@ -167,6 +168,6 @@ def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_
     
     # Add legend if a label is provided, with specific font size for the legend
     if label:
-        plt.legend(fontsize=fsize2)
+        plt.legend(fontsize=fsize3)
 
     
