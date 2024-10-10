@@ -276,8 +276,8 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
             latex_list = []
             c_list = ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7']
             for i in range(0, poly_deg+1):
-                latex_list.insert(0, latex(N(result.params[c_list[i]].value, eq_digits) * sym**i, min=0, max=0))
-            
+                latex_list.insert(0, latex(N(result.params[c_list[poly_deg-i]].value, eq_digits) * sym**(poly_deg-i), min=0, max=0))
+                
             latex_to_print = ''
             for i in range(0, poly_deg+1):
                 if "+" == latex_list[i].lstrip()[0] or "-" == latex_list[i].lstrip()[0]:
