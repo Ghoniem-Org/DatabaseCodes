@@ -8,15 +8,16 @@ import matplotlib.pyplot as plt
 from lmfit import Model
 
 marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*', 'x')) 
-fsize1 = 20
-fsize2 = 14
+fsize1 = 24
+fsize2 = 20
+fsize3 = 14
 def data_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
                       x_label='X-axis', y_label='Y-axis', title='Plot',
                       scale='linear', font_size=16, x_lim=None, y_lim=None, 
                       grid=True, legend=True, data_labels=None, fit_labels=None,
                       data_colors=None, fit_colors=None, marker_size=60, 
                       fit_line_width=3, x_label_font_size=16, y_label_font_size=16, 
-                      title_font_size=16, legend_font_size=8, legend_loc='best', legend_num_cols=2):
+                      title_font_size=16, legend_font_size=16, legend_loc='best', legend_num_cols=2):
 
     plt.figure(figsize=(6, 4), dpi=300)
 
@@ -96,7 +97,7 @@ def fit_plot(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_f
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Wrapper function for convenient plotting
-def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, marker_size, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc='best', legend_font_size=8, scale=False):
+def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, marker_size, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc='best', legend_font_size=16, scale=False):
     # Call the plotting functions
     
     if not scale:
@@ -150,8 +151,8 @@ def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_
     plt.ylim(ylim_range)
     
     # Set tick marks font size
-    plt.xticks(np.arange(xlim_range[0], xlim_range[1] + 1, 5), fontsize=fsize1)
-    plt.yticks(fontsize=fsize1)
+    plt.xticks(fontsize=fsize2)
+    plt.yticks(fontsize=fsize2)
     
     # Set plot title
     plt.title(title, fontsize=fsize1)
@@ -161,4 +162,4 @@ def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_
     
     # Add legend if a label is provided, with specific font size for the legend
     if label:
-        plt.legend(fontsize=fsize2)
+        plt.legend(fontsize=fsize3)
