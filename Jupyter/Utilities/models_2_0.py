@@ -145,6 +145,24 @@ def transition(x, p_0=p_0_default_t, p_1=p_1_default_t, p_2=p_2_default_t, p_3=p
     return p_0 + 0.5 * (p_1 - p_0 + p_2 * x) * (1 + np.tanh((x - p_3) / p_4))
 
 ###################################################################################################
+# Define the Dip(T) function based on the provided formula
+# The function has two transitions smoothly around x = p_2, and x = p_5, 
+# p_0: Shifts the entire function vertically.
+# p_1: scale value
+# p_4: second scale value
+
+p_0_default_d = 0
+p_1_default_d = 1
+p_2_default_d = 1
+p_3_default_d = 1
+p_4_default_d = 1
+p_5_default_d = 1
+p_6_default_d = 1
+def dip(x, p_0=p_0_default_d, p_1=p_1_default_d, p_2=p_2_default_d, p_3=p_3_default_d, p_4=p_4_default_d, p_5=p_5_default_d, p_6=p_6_default_d):
+    return p_0 + p_1 * (1 + np.tanh((x - p_2) / p_3))+ p_4 * (1 + np.tanh((x - p_5) / p_6))
+
+###################################################################################################
+
 
 # Calculate confidence intervals
 def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
@@ -223,9 +241,24 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
 
         params = assemble_params(5, 't')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
+
+    elif fit_func == 'dip':
+    
+        model = Model(dip)
+        params = Parameters()
+
+        if not len(param_initials) == 7:
+            raise ValueError("Must give 7 parameters to use the dip fitting function. Parameters may include NaN to fix a variable to its constant default.")
+
+        if not param_defaults is None:
+            if not len(param_defaults) == 7:
+                raise ValueError("If param_defaults is not None, must give 7 default parameters to prescribe defaults to the transition fitting function.")
+
+        params = assemble_params(7, 'd')
+        result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
         
     else:
-        raise ValueError("Please give a valid fit_func string among: 'poly', 'weibull', 'exponential', 'transition'!")
+        raise ValueError("Please give a valid fit_func string among: 'poly', 'weibull', 'exponential', 'transition', 'dip'!")
 
     # Printing the fitting parameters and equation
     if print_bool:
@@ -320,6 +353,46 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
             if '\cdot' in latex_to_print:
                 latex_to_print = latex_to_print.replace('\cdot', '\\times')
                 
+            display(Latex(f'${latex_to_print}$'))
+
+        elif fit_func == 'dip':
+
+            p_0_fit = N(result.params['p_0'].value, eq_digits)
+            p_1_fit = N(result.params['p_1'].value, eq_digits)
+            p_2_fit = N(result.params['p_2'].value, eq_digits)
+            p_3_fit = N(result.params['p_3'].value, eq_digits)
+            p_4_fit = N(result.params['p_4'].value, eq_digits)
+            p_5_fit = N(result.params['p_5'].value, eq_digits)
+            p_6_fit = N(result.params['p_6'].value, eq_digits)
+            
+            # Define the symbol for the variable in the equation
+            sym = Symbol(fit_symbol)
+            
+            # Create the LaTeX representations for each term
+            a_term_latex = latex(p_0_fit) # Constant term
+            
+            # Tanh terms with proper handling of multiplication and parentheses
+            tanh1_term = p_1_fit * (1 + sympy.tanh((sym - p_2_fit) / p_3_fit))
+            tanh2_term = p_4_fit * (1 + sympy.tanh((sym - p_5_fit) / p_6_fit))
+            
+            # Convert the tanh terms to LaTeX
+            tanh1_term_latex = latex(tanh1_term, min=0, max=0)
+            tanh2_term_latex = latex(tanh2_term, min=0, max=0)
+            
+            # Ensure the terms have a "+" or "-" sign at the beginning if necessary
+            if a_term_latex.lstrip()[0] not in ["+", "-"]:
+                a_term_latex = "+ " + a_term_latex + " "
+            
+            if tanh1_term_latex.lstrip()[0] not in ["+", "-"]:
+                tanh1_term_latex = "+ " + tanh1_term_latex
+                
+            if tanh2_term_latex.lstrip()[0] not in ["+", "-"]:
+                tanh2_term_latex = "+ " + tanh2_term_latex
+            
+            # Combine the LaTeX expressions inside a \boxed environment
+            latex_to_print = '\\boxed{ ' + a_term_latex + tanh1_term_latex + tanh2_term_latex + ' }'
+            
+            # Display the LaTeX expression
             display(Latex(f'${latex_to_print}$'))
             
         else:
