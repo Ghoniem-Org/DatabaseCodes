@@ -104,7 +104,9 @@ def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, m
         scale = 'linear'
         
     data_plot(x_data_list, y_data_list, font_size=font_size, marker_size=marker_size, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc, scale=scale)
-    fit_plot(x_for_fit_plot, fit_result, legend_font_size=legend_font_size, legend_loc=legend_loc)
+
+    if not fit_result is None:
+        fit_plot(x_for_fit_plot, fit_result, legend_font_size=legend_font_size, legend_loc=legend_loc)
 
 # Define a function to plot multiple curves
 def plot_multiple_curves(temperatures, shift_percent=0.2):
