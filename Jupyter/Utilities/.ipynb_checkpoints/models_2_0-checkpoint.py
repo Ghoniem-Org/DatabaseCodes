@@ -165,10 +165,10 @@ def dip(x, p_0=p_0_default_d, p_1=p_1_default_d, p_2=p_2_default_d, p_3=p_3_defa
 
 
 # Calculate confidence intervals
-def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
+def get_model_fit_and_print_it(x, y, sigma=2, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
                                material_name=None, property_name=None, eq_digits=6, print_bool=False, fit_symbol='T'):
 
-    # Utility funciton to assemble parameters for LMFIT
+    # Utility function to assemble parameters for LMFIT
     def assemble_params(num_params, func_suffix):
         params = Parameters()
         
@@ -197,6 +197,14 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
         params = eval("model.make_params("  + args + ")") 
         result = model.fit(y, x=x, method=method, params=params)
         
+        # Regression curve
+        fit_for_x = result.eval(result.params, x=x)
+        # Confidence interval
+        dely = result.eval_uncertainty(sigma=sigma, x=x)
+        # Fit results for extremes of confidence interval
+        result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params)
+        result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params)
+        
     elif fit_func == 'weibull':
         
         model = Model(weibull)
@@ -212,6 +220,14 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
         params = assemble_params(3, 'w')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
 
+        # Regression curve
+        fit_for_x = result.eval(result.params, x=x)
+        # Confidence interval
+        dely = result.eval_uncertainty(sigma=sigma, x=x)
+        # Fit results for extremes of confidence interval
+        result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params, nan_policy='propagate')
+        result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params, nan_policy='propagate')
+
     elif fit_func == 'exponential':
         
         model = Model(exponential)
@@ -226,6 +242,14 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
 
         params = assemble_params(4, 'e')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
+
+        # Regression curve
+        fit_for_x = result.eval(result.params, x=x)
+        # Confidence interval
+        dely = result.eval_uncertainty(sigma=sigma, x=x)
+        # Fit results for extremes of confidence interval
+        result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params, nan_policy='propagate')
+        result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params, nan_policy='propagate')
         
     elif fit_func == 'transition':
         
@@ -242,6 +266,14 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
         params = assemble_params(5, 't')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
 
+        # Regression curve
+        fit_for_x = result.eval(result.params, x=x)
+        # Confidence interval
+        dely = result.eval_uncertainty(sigma=sigma, x=x)
+        # Fit results for extremes of confidence interval
+        result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params, nan_policy='propagate')
+        result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params, nan_policy='propagate')
+        
     elif fit_func == 'dip':
     
         model = Model(dip)
@@ -256,144 +288,179 @@ def get_model_fit_and_print_it(x, y, fit_func='poly', method='leastsq', param_in
 
         params = assemble_params(7, 'd')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
+
+        # Regression curve
+        fit_for_x = result.eval(result.params, x=x)
+        # Confidence interval
+        dely = result.eval_uncertainty(sigma=sigma, x=x)
+        # Fit results for extremes of confidence interval
+        result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params, nan_policy='propagate')
+        result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params, nan_policy='propagate')
         
     else:
         raise ValueError("Please give a valid fit_func string among: 'poly', 'weibull', 'exponential', 'transition', 'dip'!")
 
-    # Printing the fitting parameters and equation
+    def make_latex_poly(params, c_list, poly_deg):
+        sym = Symbol(fit_symbol)
+                
+        latex_list = []
+        for i in range(0, poly_deg+1):
+            latex_list.insert(0, latex(N(params[c_list[poly_deg-i]].value, eq_digits) * sym**(poly_deg-i), min=0, max=0))
+            
+        latex_to_print = ''
+        for i in range(0, poly_deg+1):
+            if "+" == latex_list[i].lstrip()[0] or "-" == latex_list[i].lstrip()[0]:
+                latex_to_print += latex_list[i] + " "
+            else:
+                latex_to_print += "+ " + latex_list[i] + " "
+                
+        latex_to_print = '\\boxed{ ' + latex_to_print + ' }'
+        
+        if '\cdot' in latex_to_print:
+            latex_to_print = latex_to_print.replace('\cdot', '\\times')
+
+        return latex_to_print
+
+    def make_latex_weibull(params):
+        sym = Symbol(fit_symbol)
+        
+        p_0_fit = N(result.params['p_0'].value, eq_digits)
+        p_1_fit = N(result.params['p_1'].value, eq_digits)
+        p_2_fit = N(result.params['p_2'].value, eq_digits)
+        
+        latex_to_print = '\\boxed{ '\
+        + latex((p_2_fit / p_0_fit) * ((sym - p_1_fit) / p_0_fit)**(p_2_fit - 1) * sympy.exp(-((sym - p_1_fit) / p_0_fit)**p_2_fit), min=0, max=0)\
+        + ' }'
+        if '\cdot' in latex_to_print:
+            latex_to_print = latex_to_print.replace('\cdot', '\\times')
+
+        return latex_to_print
+
+    def make_latex_exponential(params):
+        sym = Symbol(fit_symbol)
+        
+        p_0_fit = N(result.params['p_0'].value, eq_digits)
+        p_1_fit = N(result.params['p_1'].value, eq_digits)
+        p_2_fit = N(result.params['p_2'].value, eq_digits)
+        p_3_fit = N(result.params['p_3'].value, eq_digits)
+
+        a_term_latex = latex(p_0_fit)
+        exp_term_latex = latex((p_1_fit + p_2_fit * sym) * sympy.exp(p_3_fit * sym), min=0, max=0)
+
+        if "+" != a_term_latex.lstrip()[0] and "-" != a_term_latex.lstrip()[0]:
+            a_term_latex = "+ " + a_term_latex + " "
+
+        if "+" != exp_term_latex.lstrip()[0] and "-" != exp_term_latex.lstrip()[0]:
+            exp_term_latex = "+ " + exp_term_latex
+        
+        latex_to_print = '\\boxed{ ' + a_term_latex + exp_term_latex + ' }'
+        if '\cdot' in latex_to_print:
+            latex_to_print = latex_to_print.replace('\cdot', '\\times')
+
+        return latex_to_print
+
+    def make_latex_transition(params):
+        sym = Symbol(fit_symbol)
+        
+        p_0_fit = N(result.params['p_0'].value, eq_digits)
+        p_1_fit = N(result.params['p_1'].value, eq_digits)
+        one_half_times_p_1_minus_p_0_fit = N(0.5*(result.params['p_1'].value - result.params['p_0'].value), eq_digits)
+        one_half_times_p_2_fit = N(0.5*result.params['p_2'].value, eq_digits)
+        p_3_fit = N(result.params['p_3'].value, eq_digits)
+        p_4_fit = N(result.params['p_4'].value, eq_digits)
+        
+        a_term_latex = latex(p_0_fit)
+        tanh_term_latex = latex((one_half_times_p_1_minus_p_0_fit + one_half_times_p_2_fit * sym) * (1 + sympy.tanh((sym - p_3_fit) / p_4_fit)), min=0, max=0)
+
+        if "+" != a_term_latex.lstrip()[0] and "-" != a_term_latex.lstrip()[0]:
+            a_term_latex = "+ " + a_term_latex + " "
+
+        if "+" != tanh_term_latex.lstrip()[0] and "-" != tanh_term_latex.lstrip()[0]:
+            tanh_term_latex = "+ " + tanh_term_latex
+        
+        latex_to_print = '\\boxed{ ' + a_term_latex + tanh_term_latex + ' }'
+        if '\cdot' in latex_to_print:
+            latex_to_print = latex_to_print.replace('\cdot', '\\times')
+
+        return latex_to_print
+
+    def make_latex_dip(params):
+
+        # Define the symbol for the variable in the equation
+        sym = Symbol(fit_symbol)
+
+        p_0_fit = N(result.params['p_0'].value, eq_digits)
+        p_1_fit = N(result.params['p_1'].value, eq_digits)
+        p_2_fit = N(result.params['p_2'].value, eq_digits)
+        p_3_fit = N(result.params['p_3'].value, eq_digits)
+        p_4_fit = N(result.params['p_4'].value, eq_digits)
+        p_5_fit = N(result.params['p_5'].value, eq_digits)
+        p_6_fit = N(result.params['p_6'].value, eq_digits)
+        
+        # Create the LaTeX representations for each term
+        a_term_latex = latex(p_0_fit) # Constant term
+        
+        # Tanh terms with proper handling of multiplication and parentheses
+        tanh1_term = p_1_fit * (1 + sympy.tanh((sym - p_2_fit) / p_3_fit))
+        tanh2_term = p_4_fit * (1 + sympy.tanh((sym - p_5_fit) / p_6_fit))
+        
+        # Convert the tanh terms to LaTeX
+        tanh1_term_latex = latex(tanh1_term, min=0, max=0)
+        tanh2_term_latex = latex(tanh2_term, min=0, max=0)
+        
+        # Ensure the terms have a "+" or "-" sign at the beginning if necessary
+        if a_term_latex.lstrip()[0] not in ["+", "-"]:
+            a_term_latex = "+ " + a_term_latex + " "
+        
+        if tanh1_term_latex.lstrip()[0] not in ["+", "-"]:
+            tanh1_term_latex = "+ " + tanh1_term_latex
+            
+        if tanh2_term_latex.lstrip()[0] not in ["+", "-"]:
+            tanh2_term_latex = "+ " + tanh2_term_latex
+        
+        # Combine the LaTeX expressions inside a \boxed environment
+        latex_to_print = '\\boxed{ ' + a_term_latex + tanh1_term_latex + tanh2_term_latex + ' }'
+
+        return latex_to_print
+        
+    # Printing the fitting parameters and equations
     if print_bool:
         
         display(HTML("<hr>"))
         display(Markdown(f'**Fitting parameters for {material_name} {property_name}** \n'))
         print(result.fit_report())
         display(HTML("<hr>"))
-        display(Markdown(f'**The equation for {material_name} {property_name} is:**\n'))
+        display(Markdown(f'**The equations for {material_name} {property_name} are:**\n'))
         
         if fit_func == 'poly':
             
-            sym = Symbol(fit_symbol)
-                
-            latex_list = []
-            c_list = ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7']
-            for i in range(0, poly_deg+1):
-                latex_list.insert(0, latex(N(result.params[c_list[poly_deg-i]].value, eq_digits) * sym**(poly_deg-i), min=0, max=0))
-                
-            latex_to_print = ''
-            for i in range(0, poly_deg+1):
-                if "+" == latex_list[i].lstrip()[0] or "-" == latex_list[i].lstrip()[0]:
-                    latex_to_print += latex_list[i] + " "
-                else:
-                    latex_to_print += "+ " + latex_list[i] + " "
-                    
-            latex_to_print = '\\boxed{ ' + latex_to_print + ' }'
+            display(Latex(f'Fit: ${make_latex_poly(result.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_poly(result_min.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_poly(result_max.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
             
-            if '\cdot' in latex_to_print:
-                latex_to_print = latex_to_print.replace('\cdot', '\\times')
-            
-            display(Latex(f'${latex_to_print}$'))
-        
         elif fit_func == 'weibull':
             
-            p_0_fit = N(result.params['p_0'].value, eq_digits)
-            p_1_fit = N(result.params['p_1'].value, eq_digits)
-            p_2_fit = N(result.params['p_2'].value, eq_digits)
-            sym = Symbol(fit_symbol)
-            
-            latex_to_print = '\\boxed{ '\
-            + latex((p_2_fit / p_0_fit) * ((sym - p_1_fit) / p_0_fit)**(p_2_fit - 1) * sympy.exp(-((sym - p_1_fit) / p_0_fit)**p_2_fit), min=0, max=0)\
-            + ' }'
-            if '\cdot' in latex_to_print:
-                latex_to_print = latex_to_print.replace('\cdot', '\\times')
-            
-            display(Latex(f'${latex_to_print}$'))
+            display(Latex(f'Fit: ${make_latex_weibull(result.params)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_weibull(result_min.params)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_weibull(result_max.params)}$'))
             
         elif fit_func == 'exponential':
 
-            p_0_fit = N(result.params['p_0'].value, eq_digits)
-            p_1_fit = N(result.params['p_1'].value, eq_digits)
-            p_2_fit = N(result.params['p_2'].value, eq_digits)
-            p_3_fit = N(result.params['p_3'].value, eq_digits)
-            sym = Symbol(fit_symbol)
-
-            a_term_latex = latex(p_0_fit)
-            exp_term_latex = latex((p_1_fit + p_2_fit * sym) * sympy.exp(p_3_fit * sym), min=0, max=0)
-
-            if "+" != a_term_latex.lstrip()[0] and "-" != a_term_latex.lstrip()[0]:
-                a_term_latex = "+ " + a_term_latex + " "
-
-            if "+" != exp_term_latex.lstrip()[0] and "-" != exp_term_latex.lstrip()[0]:
-                exp_term_latex = "+ " + exp_term_latex
-            
-            latex_to_print = '\\boxed{ ' + a_term_latex + exp_term_latex + ' }'
-            if '\cdot' in latex_to_print:
-                latex_to_print = latex_to_print.replace('\cdot', '\\times')
-                
-            display(Latex(f'${latex_to_print}$'))
+            display(Latex(f'Fit: ${make_latex_exponential(result.params)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_exponential(result_min.params)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_exponential(result_max.params)}$'))
 
         elif fit_func == 'transition':
             
-            p_0_fit = N(result.params['p_0'].value, eq_digits)
-            p_1_fit = N(result.params['p_1'].value, eq_digits)
-            one_half_times_p_1_minus_p_0_fit = N(0.5*(result.params['p_1'].value - result.params['p_0'].value), eq_digits)
-            one_half_times_p_2_fit = N(0.5*result.params['p_2'].value, eq_digits)
-            p_3_fit = N(result.params['p_3'].value, eq_digits)
-            p_4_fit = N(result.params['p_4'].value, eq_digits)
-            sym = Symbol(fit_symbol)
-    
-            a_term_latex = latex(p_0_fit)
-            tanh_term_latex = latex((one_half_times_p_1_minus_p_0_fit + one_half_times_p_2_fit * sym) * (1 + sympy.tanh((sym - p_3_fit) / p_4_fit)), min=0, max=0)
-
-            if "+" != a_term_latex.lstrip()[0] and "-" != a_term_latex.lstrip()[0]:
-                a_term_latex = "+ " + a_term_latex + " "
-
-            if "+" != tanh_term_latex.lstrip()[0] and "-" != tanh_term_latex.lstrip()[0]:
-                tanh_term_latex = "+ " + tanh_term_latex
+            display(Latex(f'Fit: ${make_latex_transition(result.params)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_transition(result_min.params)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_transition(result_max.params)}$'))
             
-            latex_to_print = '\\boxed{ ' + a_term_latex + tanh_term_latex + ' }'
-            if '\cdot' in latex_to_print:
-                latex_to_print = latex_to_print.replace('\cdot', '\\times')
-                
-            display(Latex(f'${latex_to_print}$'))
-
         elif fit_func == 'dip':
 
-            p_0_fit = N(result.params['p_0'].value, eq_digits)
-            p_1_fit = N(result.params['p_1'].value, eq_digits)
-            p_2_fit = N(result.params['p_2'].value, eq_digits)
-            p_3_fit = N(result.params['p_3'].value, eq_digits)
-            p_4_fit = N(result.params['p_4'].value, eq_digits)
-            p_5_fit = N(result.params['p_5'].value, eq_digits)
-            p_6_fit = N(result.params['p_6'].value, eq_digits)
-            
-            # Define the symbol for the variable in the equation
-            sym = Symbol(fit_symbol)
-            
-            # Create the LaTeX representations for each term
-            a_term_latex = latex(p_0_fit) # Constant term
-            
-            # Tanh terms with proper handling of multiplication and parentheses
-            tanh1_term = p_1_fit * (1 + sympy.tanh((sym - p_2_fit) / p_3_fit))
-            tanh2_term = p_4_fit * (1 + sympy.tanh((sym - p_5_fit) / p_6_fit))
-            
-            # Convert the tanh terms to LaTeX
-            tanh1_term_latex = latex(tanh1_term, min=0, max=0)
-            tanh2_term_latex = latex(tanh2_term, min=0, max=0)
-            
-            # Ensure the terms have a "+" or "-" sign at the beginning if necessary
-            if a_term_latex.lstrip()[0] not in ["+", "-"]:
-                a_term_latex = "+ " + a_term_latex + " "
-            
-            if tanh1_term_latex.lstrip()[0] not in ["+", "-"]:
-                tanh1_term_latex = "+ " + tanh1_term_latex
-                
-            if tanh2_term_latex.lstrip()[0] not in ["+", "-"]:
-                tanh2_term_latex = "+ " + tanh2_term_latex
-            
-            # Combine the LaTeX expressions inside a \boxed environment
-            latex_to_print = '\\boxed{ ' + a_term_latex + tanh1_term_latex + tanh2_term_latex + ' }'
-            
-            # Display the LaTeX expression
-            display(Latex(f'${latex_to_print}$'))
+            display(Latex(f'Fit: ${make_latex_dip(result.params)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_dip(result_min.params)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_dip(result_max.params)}$'))
             
         else:
             pass # valid fit_func string checked in previous if block
