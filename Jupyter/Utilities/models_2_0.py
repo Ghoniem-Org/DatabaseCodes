@@ -433,31 +433,26 @@ def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq',
         display(Markdown(f'**The equations for {material_name} {property_name} are:**\n'))
         
         if fit_func == 'poly':
-            
-            display(Latex(f'Fit: ${make_latex_poly(result.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
-            display(Latex(f'Minimum of confidence interval: ${make_latex_poly(result_min.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
-            display(Latex(f'Maximum of confidence interval: ${make_latex_poly(result_max.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
-            
+            display(Latex(f'Fit: ${make_latex_poly(result.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_poly(result_min.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_poly(result_max.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+
         elif fit_func == 'weibull':
-            
             display(Latex(f'Fit: ${make_latex_weibull(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_weibull(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_weibull(result_max.params)}$'))
             
         elif fit_func == 'exponential':
-
             display(Latex(f'Fit: ${make_latex_exponential(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_exponential(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_exponential(result_max.params)}$'))
 
         elif fit_func == 'transition':
-            
             display(Latex(f'Fit: ${make_latex_transition(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_transition(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_transition(result_max.params)}$'))
             
         elif fit_func == 'dip':
-
             display(Latex(f'Fit: ${make_latex_dip(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_dip(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_dip(result_max.params)}$'))
