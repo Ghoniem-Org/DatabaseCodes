@@ -142,6 +142,7 @@ def plot_multiple_curves(temperatures, shift_percent=0.2):
 
 # Generic function for plotting
 def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_range, label=None):
+    plt.figure(figsize=(6, 4), dpi=300)
     plt.plot(x_data + shift, y_data, label=label, linewidth=2)
     
     # Set x- and y-axis labels font size
