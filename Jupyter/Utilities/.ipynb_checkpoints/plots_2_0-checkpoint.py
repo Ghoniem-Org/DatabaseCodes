@@ -7,17 +7,17 @@ from itertools import product, cycle
 import matplotlib.pyplot as plt
 from lmfit import Model
 
-marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*', 'x')) 
+marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*')) 
 fsize1 = 24
 fsize2 = 20
 fsize3 = 14
 def data_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
-                      x_label='X-axis', y_label='Y-axis', title='Plot',
-                      scale='linear', font_size=16, x_lim=None, y_lim=None, 
-                      grid=True, legend=True, data_labels=None, fit_labels=None,
-                      data_colors=None, fit_colors=None, marker_size=60, 
-                      fit_line_width=3, x_label_font_size=16, y_label_font_size=16, 
-                      title_font_size=16, legend_font_size=16, legend_loc='best', legend_num_cols=2):
+              x_label='X-axis', y_label='Y-axis', title='Plot',
+              scale='linear', x_lim=None, y_lim=None, 
+              grid=True, legend=True, data_labels=None, fit_labels=None,
+              data_colors=None, fit_colors=None, marker_size=25, 
+              fit_line_width=2, x_label_font_size=12, y_label_font_size=12, 
+              title_font_size=16, legend_font_size=8, legend_loc='best', legend_num_cols=2):
 
     plt.figure(figsize=(6, 4), dpi=300)
 
@@ -82,7 +82,7 @@ def data_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Plot fit and confidence intervals from fitting result
-def fit_plot(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_font_size=8, legend_loc='best', legend_num_cols=2, fit_line_width=3, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
+def fit_plot(x, fit_result, sigma=3, legend=True, fit_label='Data Fit', legend_font_size=8, legend_loc='best', legend_num_cols=2, fit_line_width=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
 
     # Regression curve
     fit_for_x = fit_result.eval(fit_result.params, x=x)
@@ -97,16 +97,16 @@ def fit_plot(x, fit_result, sigma=2, legend=True, fit_label='Data Fit', legend_f
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Wrapper function for convenient plotting
-def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, marker_size, x_label, y_label, x_lim, y_lim, data_labels, title, legend_loc='best', legend_font_size=16, scale=False):
+def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, marker_size, x_label, y_label, x_lim, y_lim, data_labels, title, sigma=3, legend_loc='best', legend_font_size=8, scale=False):
     # Call the plotting functions
     
     if not scale:
         scale = 'linear'
         
-    data_plot(x_data_list, y_data_list, font_size=font_size, marker_size=marker_size, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc, scale=scale)
+    data_plot(x_data_list, y_data_list, marker_size=marker_size, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc, scale=scale)
     
     if not fit_result is None:
-        fit_plot(x_for_fit_plot, fit_result, legend_font_size=legend_font_size, legend_loc=legend_loc)
+        fit_plot(x_for_fit_plot, fit_result, sigma=sigma, legend_font_size=legend_font_size, legend_loc=legend_loc)
 
 # Define a function to plot multiple curves
 def plot_multiple_curves(temperatures, shift_percent=0.2):
@@ -116,14 +116,14 @@ def plot_multiple_curves(temperatures, shift_percent=0.2):
     for i, T in enumerate(temperatures):
         shift = i * shift_percent * TotalElongation(T)  # Shift by 20% of Total Elongation for clarity
         x_values, y_values = stress_strain_curve(T, shift=shift)
-        plt.plot(x_values, y_values, marker='', linestyle='-', label=f'{T-273} °C')
+        plt.plot(x_values, y_values, marker='', linestyle='-', label=f'{T-273} °C', linewidth=1)
     
-    plt.xlabel('Strain [%]', fontsize=16)  # Set font size for x-axis label
-    plt.ylabel('Stress [MPa]', fontsize=16)  # Set font size for y-axis label
+    plt.xlabel('Strain [%]', fontsize=12)  # Set font size for x-axis label
+    plt.ylabel('Stress [MPa]', fontsize=12)  # Set font size for y-axis label
     plt.title('Stress-Strain Curves at Different Temperatures', fontsize=16)  # Set font size for title
     
     # Modify legend position and line thickness, and remove data points
-    plt.legend(loc='best', fontsize=10)  # Control legend position (e.g., 'upper right', 'lower left')
+    plt.legend(loc='best', fontsize=8)  # Control legend position (e.g., 'upper right', 'lower left')
     
     # Control line thickness
     for line in plt.gca().get_lines():
@@ -136,7 +136,7 @@ def plot_multiple_curves(temperatures, shift_percent=0.2):
     plt.grid(True)
     plt.xlim(0, max(x_values) + 5)  # Adjust x-axis limit for better visualization
     plt.ylim(0, 700)  # Adjust y-axis limit as needed
-    plt.tick_params(axis='both', which='major', labelsize=16)  # Set font size for tick labels
+    plt.tick_params(axis='both', which='major', labelsize=12)  # Set font size for tick labels
 
     plt.show()
 
@@ -145,8 +145,8 @@ def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_
     plt.plot(x_data + shift, y_data, label=label, linewidth=2)
     
     # Set x- and y-axis labels font size
-    plt.xlabel(xlabel, fontsize=fsize1, fontname='Times New Roman')
-    plt.ylabel(ylabel, fontsize=fsize1, fontname='Times New Roman')
+    plt.xlabel(xlabel, fontsize=fsize1)
+    plt.ylabel(ylabel, fontsize=fsize1)
     
     # Set x- and y-limits
     plt.xlim(xlim_range)

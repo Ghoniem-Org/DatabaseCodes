@@ -63,7 +63,7 @@ def load_data(filename, sheet_name, header_rows_list=[1, 3], num_data_rows=20, r
     
     temp_data.columns = var_names
     if display_data_table_bool:
-        display(pd.DataFrame(temp_data))
+        display(pd.DataFrame(temp_data).dropna())
     
     variables = [temp_data[col].dropna().to_numpy() for col in var_names]
 
@@ -165,7 +165,7 @@ def dip(x, p_0=p_0_default_d, p_1=p_1_default_d, p_2=p_2_default_d, p_3=p_3_defa
 
 
 # Calculate confidence intervals
-def get_model_fit_and_print_it(x, y, sigma=2, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
+def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
                                material_name=None, property_name=None, eq_digits=6, print_bool=False, fit_symbol='T'):
 
     # Utility function to assemble parameters for LMFIT
