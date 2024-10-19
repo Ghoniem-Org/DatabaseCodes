@@ -99,12 +99,9 @@ def fit_plot(x, fit_result, sigma=3, legend=True, fit_label='Data Fit', legend_f
 # Wrapper function for convenient plotting
 def plot_data(x_data_list, y_data_list, x_for_fit_plot, fit_result, font_size, marker_size, x_label, y_label, x_lim, y_lim, data_labels, title, sigma=3, legend_loc='best', legend_font_size=8, scale=False):
     # Call the plotting functions
-    
     if not scale:
         scale = 'linear'
-        
     data_plot(x_data_list, y_data_list, marker_size=marker_size, x_label_font_size=font_size, y_label_font_size=font_size, x_label=x_label, y_label=y_label, x_lim=x_lim, y_lim=y_lim, data_labels=data_labels, title_font_size=font_size, legend_font_size=legend_font_size, title=title, legend_loc=legend_loc, scale=scale)
-    
     if not fit_result is None:
         fit_plot(x_for_fit_plot, fit_result, sigma=sigma, legend_font_size=legend_font_size, legend_loc=legend_loc)
 
@@ -141,7 +138,7 @@ def plot_multiple_curves(temperatures, shift_percent=0.2):
     plt.show()
 
 # Generic function for plotting
-def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_range, label=None):
+def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_range, label=None, fsize1=fsize1, fsize2=fsize2, fsize3 = fsize3):
     plt.figure(figsize=(6, 4), dpi=300)
     plt.plot(x_data + shift, y_data, label=label, linewidth=2)
     
@@ -152,10 +149,10 @@ def generic_plot(x_data, y_data, shift, title, xlabel, ylabel, xlim_range, ylim_
     # Set x- and y-limits
     plt.xlim(xlim_range)
     plt.ylim(ylim_range)
-    
+
     # Set tick marks font size
-    plt.xticks(fontsize=fsize2)
-    plt.yticks(fontsize=fsize2)
+    # plt.xticks(fontsize=fsize2)
+    # plt.yticks(fontsize=fsize2)
     
     # Set plot title
     plt.title(title, fontsize=fsize1)
