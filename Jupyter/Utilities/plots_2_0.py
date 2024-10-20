@@ -86,7 +86,7 @@ def fit_plot(x, fit_result, sigma=3, legend=True, fit_label='Data Fit', legend_f
 
     # Regression curve
     fit_for_x = fit_result.eval(fit_result.params, x=x)
-    plt.plot(x, fit_for_x, linewidth=fit_line_width, color='black', label=fit_label)
+    plt.plot(x, fit_for_x, linewidth=fit_line_width, color=fit_line_color, label=fit_label)
     
     # Confidence interval
     dely = fit_result.eval_uncertainty(sigma=sigma, x=x)
