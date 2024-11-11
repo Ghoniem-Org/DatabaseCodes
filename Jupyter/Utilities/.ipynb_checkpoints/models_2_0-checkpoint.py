@@ -145,7 +145,7 @@ def transition(x, p_0=p_0_default_t, p_1=p_1_default_t, p_2=p_2_default_t, p_3=p
     return p_0 + 0.5 * (p_1 - p_0 + p_2 * x) * (1 + np.tanh((x - p_3) / p_4))
 
 ###################################################################################################
-# Define the Dip(T) function based on the provided formula
+# Dip function
 # The function has two transitions smoothly around x = p_2, and x = p_5, 
 # p_0: Shifts the entire function vertically.
 # p_1: scale value
@@ -162,7 +162,14 @@ def dip(x, p_0=p_0_default_d, p_1=p_1_default_d, p_2=p_2_default_d, p_3=p_3_defa
     return p_0 + p_1 * (1 + np.tanh((x - p_2) / p_3))+ p_4 * (1 + np.tanh((x - p_5) / p_6))
 
 ###################################################################################################
+# Hardening function
+p_0_default_h = 0
+p_1_default_h = 1
+p_2_default_h = 1
+def hardening(x, p_0=p_0_default_h, p_1=p_1_default_h, p_2=p_2_default_h):
+    return (p_0 + p_1 * x**(1/2)) * (1 - np.exp(-x/p_2))**(1/2)
 
+###################################################################################################
 
 # Calculate confidence intervals
 def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
@@ -284,9 +291,32 @@ def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq',
 
         if not param_defaults is None:
             if not len(param_defaults) == 7:
-                raise ValueError("If param_defaults is not None, must give 7 default parameters to prescribe defaults to the transition fitting function.")
+                raise ValueError("If param_defaults is not None, must give 7 default parameters to prescribe defaults to the dip fitting function.")
 
         params = assemble_params(7, 'd')
+        result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
+
+        # Regression curve
+        fit_for_x = result.eval(result.params, x=x)
+        # Confidence interval
+        dely = result.eval_uncertainty(sigma=sigma, x=x)
+        # Fit results for extremes of confidence interval
+        result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params, nan_policy='propagate')
+        result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params, nan_policy='propagate')
+
+    elif fit_func == 'hardening':
+    
+        model = Model(hardening)
+        params = Parameters()
+
+        if not len(param_initials) == 3:
+            raise ValueError("Must give 3 parameters to use the hardening fitting function. Parameters may include NaN to fix a variable to its constant default.")
+
+        if not param_defaults is None:
+            if not len(param_defaults) == 3:
+                raise ValueError("If param_defaults is not None, must give 3 default parameters to prescribe defaults to the hardening fitting function.")
+
+        params = assemble_params(3, 'h')
         result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
 
         # Regression curve
@@ -422,6 +452,21 @@ def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq',
         latex_to_print = '\\boxed{ ' + a_term_latex + tanh1_term_latex + tanh2_term_latex + ' }'
 
         return latex_to_print
+
+    def make_latex_hardening(params):
+        sym = Symbol(fit_symbol)
+        
+        p_0_fit = N(result.params['p_0'].value, eq_digits)
+        p_1_fit = N(result.params['p_1'].value, eq_digits)
+        p_2_fit = N(result.params['p_2'].value, eq_digits)
+        
+        latex_to_print = '\\boxed{ '\
+        + latex((p_0_fit + p_1_fit * sym**(1/2)) * (1 - sympy.exp(-sym/p_2_fit))**(1/2), min=0, max=0)\
+        + ' }'
+        if '\cdot' in latex_to_print:
+            latex_to_print = latex_to_print.replace('\cdot', '\\times')
+
+        return latex_to_print
         
     # Printing the fitting parameters and equations
     if print_bool:
@@ -433,34 +478,34 @@ def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq',
         display(Markdown(f'**The equations for {material_name} {property_name} are:**\n'))
         
         if fit_func == 'poly':
-            
-            display(Latex(f'Fit: ${make_latex_poly(result.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
-            display(Latex(f'Minimum of confidence interval: ${make_latex_poly(result_min.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
-            display(Latex(f'Maximum of confidence interval: ${make_latex_poly(result_max.params, ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'], poly_deg)}$'))
-            
+            display(Latex(f'Fit: ${make_latex_poly(result.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_poly(result_min.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_poly(result_max.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+
         elif fit_func == 'weibull':
-            
             display(Latex(f'Fit: ${make_latex_weibull(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_weibull(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_weibull(result_max.params)}$'))
             
         elif fit_func == 'exponential':
-
             display(Latex(f'Fit: ${make_latex_exponential(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_exponential(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_exponential(result_max.params)}$'))
 
         elif fit_func == 'transition':
-            
             display(Latex(f'Fit: ${make_latex_transition(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_transition(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_transition(result_max.params)}$'))
             
         elif fit_func == 'dip':
-
             display(Latex(f'Fit: ${make_latex_dip(result.params)}$'))
             display(Latex(f'Minimum of confidence interval: ${make_latex_dip(result_min.params)}$'))
             display(Latex(f'Maximum of confidence interval: ${make_latex_dip(result_max.params)}$'))
+            
+        elif fit_func == 'hardening':
+            display(Latex(f'Fit: ${make_latex_hardening(result.params)}$'))
+            display(Latex(f'Minimum of confidence interval: ${make_latex_hardening(result_min.params)}$'))
+            display(Latex(f'Maximum of confidence interval: ${make_latex_hardening(result_max.params)}$'))
             
         else:
             pass # valid fit_func string checked in previous if block

@@ -6,6 +6,9 @@ import numpy as np
 from itertools import product, cycle
 import matplotlib.pyplot as plt
 from lmfit import Model
+from scipy.optimize import curve_fit
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
 
 marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*')) 
 fsize1 = 24
