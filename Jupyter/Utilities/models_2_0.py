@@ -137,10 +137,10 @@ def exponential(x, p_0=p_0_default_e, p_1=p_1_default_e, p_2=p_2_default_e, p_3=
 # p_4: Controls the steepness of the transition
 
 p_0_default_t = 0
-p_1_default_t = 0
-p_2_default_t = 1
-p_3_default_t = 0
-p_4_default_t = 1
+p_1_default_t = 1
+p_2_default_t = 0
+p_3_default_t = 100
+p_4_default_t = 10
 def transition(x, p_0=p_0_default_t, p_1=p_1_default_t, p_2=p_2_default_t, p_3=p_3_default_t, p_4=p_4_default_t):
     return p_0 + 0.5 * (p_1 - p_0 + p_2 * x) * (1 + np.tanh((x - p_3) / p_4))
 
@@ -172,8 +172,8 @@ def hardening(x, p_0=p_0_default_h, p_1=p_1_default_h, p_2=p_2_default_h):
 ###################################################################################################
 
 # Calculate confidence intervals
-def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
-                               material_name=None, property_name=None, eq_digits=6, print_bool=False, fit_symbol='T'):
+def get_model_fit_and_print_it(x, y, sigma=1, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
+                               material_name=None, property_name=None, eq_digits=4, print_bool=False, fit_symbol='T'):
 
     # Utility function to assemble parameters for LMFIT
     def assemble_params(num_params, func_suffix):
