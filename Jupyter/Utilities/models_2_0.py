@@ -171,6 +171,14 @@ def hardening(x, p_0=p_0_default_h, p_1=p_1_default_h, p_2=p_2_default_h):
 
 ###################################################################################################
 
+# Swelling function
+p_0_default_s = 1
+p_1_default_s = 1
+def swelling(x, p_0=p_0_default_s, p_1=p_1_default_s):
+    return p_0 * x * (1 - np.exp(-x/p_1))
+
+###################################################################################################
+
 # Calculate confidence intervals
 def get_model_fit_and_print_it(x, y, sigma=1, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
                                material_name=None, property_name=None, eq_digits=4, print_bool=False, print_params_bool=True, fit_symbol='T'):
@@ -326,9 +334,32 @@ def get_model_fit_and_print_it(x, y, sigma=1, fit_func='poly', method='leastsq',
         # Fit results for extremes of confidence interval
         result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params, nan_policy='propagate')
         result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params, nan_policy='propagate')
-        
+
+    elif fit_func == 'swelling':
+    
+        model = Model(swelling)
+        params = Parameters()
+
+        if not len(param_initials) == 2:
+            raise ValueError("Must give 2 parameters to use the hardening fitting function. Parameters may include NaN to fix a variable to its constant default.")
+
+        if not param_defaults is None:
+            if not len(param_defaults) == 2:
+                raise ValueError("If param_defaults is not None, must give 2 default parameters to prescribe defaults to the hardening fitting function.")
+
+        params = assemble_params(2, 's')
+        result = model.fit(y, x=x, method=method, params=params, nan_policy='propagate')
+
+        # Regression curve
+        fit_for_x = result.eval(result.params, x=x)
+        # Confidence interval
+        dely = result.eval_uncertainty(sigma=sigma, x=x)
+        # Fit results for extremes of confidence interval
+        result_min = model.fit(fit_for_x-dely, x=x, method=method, params=params, nan_policy='propagate')
+        result_max = model.fit(fit_for_x+dely, x=x, method=method, params=params, nan_policy='propagate')
+
     else:
-        raise ValueError("Please give a valid fit_func string among: 'poly', 'weibull', 'exponential', 'transition', 'dip'!")
+        raise ValueError("Please give a valid fit_func string among: 'poly', 'weibull', 'exponential', 'transition', 'dip', 'hardening', 'swelling'!")
 
     def make_latex_poly(params, c_list, poly_deg):
         sym = Symbol(fit_symbol)
@@ -467,6 +498,20 @@ def get_model_fit_and_print_it(x, y, sigma=1, fit_func='poly', method='leastsq',
             latex_to_print = latex_to_print.replace('\cdot', '\\times')
 
         return latex_to_print
+
+    def make_latex_swelling(params):
+        sym = Symbol(fit_symbol)
+        
+        p_0_fit = N(result.params['p_0'].value, eq_digits)
+        p_1_fit = N(result.params['p_1'].value, eq_digits)
+
+        latex_to_print = '\\boxed{ '\
+        + latex(p_0_fit * sym * (1 - sympy.exp(-sym/p_1_fit)), min=0, max=0)\
+        + ' }'
+        if '\cdot' in latex_to_print:
+            latex_to_print = latex_to_print.replace('\cdot', '\\times')
+
+        return latex_to_print
         
     # Printing the fitting parameters and equations
     if print_bool:
@@ -512,6 +557,12 @@ def get_model_fit_and_print_it(x, y, sigma=1, fit_func='poly', method='leastsq',
             if print_params_bool:
                 display(Latex(f'Minimum of confidence interval: ${make_latex_hardening(result_min.params)}$'))
                 display(Latex(f'Maximum of confidence interval: ${make_latex_hardening(result_max.params)}$'))
+
+        elif fit_func == 'swelling':
+            display(Latex(f'Fit: ${make_latex_swelling(result.params)}$'))
+            if print_params_bool:
+                display(Latex(f'Minimum of confidence interval: ${make_latex_swelling(result_min.params)}$'))
+                display(Latex(f'Maximum of confidence interval: ${make_latex_swelling(result_max.params)}$'))
             
         else:
             pass # valid fit_func string checked in previous if block
