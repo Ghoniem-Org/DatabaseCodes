@@ -85,16 +85,16 @@ def data_plot(x_data_list, y_data_list, x_fit_list=None, y_fit_list=None,
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
 # Plot fit and confidence intervals from fitting result
-def fit_plot(x, fit_result, sigma=3, legend=True, fit_label='Data Fit', legend_font_size=8, legend_loc='best', legend_num_cols=2, fit_line_width=2, fit_line_color='black', pred_int_fill_color='grey', conf_int_fill_color='blue'):
-
+def fit_plot(x, fit_result, sigma=3, legend=True, fit_label='Data Fit', legend_font_size=8, legend_loc='best', legend_num_cols=2, fit_line_width=2, fit_line_color='black', conf_int=True, conf_int_fill_color='blue'):
     # Regression curve
     fit_for_x = fit_result.eval(fit_result.params, x=x)
     plt.plot(x, fit_for_x, linewidth=fit_line_width, color=fit_line_color, label=fit_label)
-    
+
     # Confidence interval
-    dely = fit_result.eval_uncertainty(sigma=sigma, x=x)
-    plt.fill_between(x, fit_for_x-dely, fit_for_x+dely,\
-                     color=conf_int_fill_color, alpha=0.2, label=str(sigma) + "σ Conf. Int.")
+    if conf_int:
+        dely = fit_result.eval_uncertainty(sigma=sigma, x=x)
+        plt.fill_between(x, fit_for_x - dely, fit_for_x + dely, color=conf_int_fill_color, alpha=0.2,
+                         label=str(sigma) + "σ Conf. Int.")
 
     if legend:
         plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)

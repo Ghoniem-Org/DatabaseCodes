@@ -180,7 +180,7 @@ def swelling(x, p_0=p_0_default_s, p_1=p_1_default_s):
 ###################################################################################################
 
 # Calculate confidence intervals
-def get_model_fit_and_print_it(x, y, sigma=1, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
+def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq', param_initials=None, param_defaults=None,
                                material_name=None, property_name=None, eq_digits=4, print_bool=False, print_params_bool=True, fit_symbol='T'):
 
     # Utility function to assemble parameters for LMFIT
