@@ -77,8 +77,8 @@ def concatenate_and_sort(x_list, y_list):
     y_concat = np.concatenate(y_list)
 
     x_sorted_indices = x_concat.argsort()
-    x_sorted = x_concat[x_sorted_indices[::-1]]
-    y_sorted = y_concat[x_sorted_indices[::-1]]
+    x_sorted = x_concat[x_sorted_indices]
+    y_sorted = y_concat[x_sorted_indices]
 
     return x_sorted, y_sorted
 

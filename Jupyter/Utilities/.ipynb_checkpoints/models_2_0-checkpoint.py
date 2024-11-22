@@ -63,8 +63,8 @@ def load_data(filename, sheet_name, header_rows_list=[1, 3], num_data_rows=20, r
     
     temp_data.columns = var_names
     if display_data_table_bool:
-        display(pd.DataFrame(temp_data).dropna())
-    
+        display(pd.DataFrame(temp_data).dropna(how='all'))
+
     variables = [temp_data[col].dropna().to_numpy() for col in var_names]
 
     return var_names, variables, temp_data
@@ -77,8 +77,8 @@ def concatenate_and_sort(x_list, y_list):
     y_concat = np.concatenate(y_list)
 
     x_sorted_indices = x_concat.argsort()
-    x_sorted = x_concat[x_sorted_indices[::-1]]
-    y_sorted = y_concat[x_sorted_indices[::-1]]
+    x_sorted = x_concat[x_sorted_indices]
+    y_sorted = y_concat[x_sorted_indices]
 
     return x_sorted, y_sorted
 
