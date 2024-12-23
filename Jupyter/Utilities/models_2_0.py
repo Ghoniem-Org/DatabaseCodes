@@ -523,46 +523,67 @@ def get_model_fit_and_print_it(x, y, sigma=3, fit_func='poly', method='leastsq',
             display(Markdown(f'**The equations for {material_name} {property_name} are:**\n'))
         
         if fit_func == 'poly':
-            display(Latex(f'Fit: ${make_latex_poly(result.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+            print("Fit:")
+            display(Latex(f'$${make_latex_poly(result.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$$'))
             if print_params_bool:
-                display(Latex(f'Minimum of confidence interval: ${make_latex_poly(result_min.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
-                display(Latex(f'Maximum of confidence interval: ${make_latex_poly(result_max.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$'))
+                print("Minimum of confidence interval:")
+                display(Latex(f'$${make_latex_poly(result_min.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$$'))
+                print("Maximum of confidence interval:")
+                display(Latex(f'$${make_latex_poly(result_max.params, ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7"], poly_deg)}$$'))
 
         elif fit_func == 'weibull':
-            display(Latex(f'Fit: ${make_latex_weibull(result.params)}$'))
+            print("Fit:")
+            display(Latex(f'$${make_latex_weibull(result.params)}$$'))
             if print_params_bool:
-                display(Latex(f'Minimum of confidence interval: ${make_latex_weibull(result_min.params)}$'))
-                display(Latex(f'Maximum of confidence interval: ${make_latex_weibull(result_max.params)}$'))
+                print("Minimum of confidence interval:")
+                display(Latex(f'$${make_latex_weibull(result_min.params)}$$'))
+                print("Maximum of confidence interval:")
+                display(Latex(f'$${make_latex_weibull(result_max.params)}$$'))
             
         elif fit_func == 'exponential':
-            display(Latex(f'Fit: ${make_latex_exponential(result.params)}$'))
+            print("Fit:")
+            display(Latex(f'$${make_latex_exponential(result.params)}$$'))
             if print_params_bool:
-                display(Latex(f'Minimum of confidence interval: ${make_latex_exponential(result_min.params)}$'))
-                display(Latex(f'Maximum of confidence interval: ${make_latex_exponential(result_max.params)}$'))
+                print("Minimum of confidence interval:")
+                display(Latex(f'$${make_latex_exponential(result_min.params)}$$'))
+                print("Maximum of confidence interval:")
+                display(Latex(f'$${make_latex_exponential(result_max.params)}$$'))
 
         elif fit_func == 'transition':
-            display(Latex(f'Fit: ${make_latex_transition(result.params)}$'))
+            print("Fit:")
+            display(Latex(f'$${make_latex_transition(result.params)}$$'))
             if print_params_bool:
-                display(Latex(f'Minimum of confidence interval: ${make_latex_transition(result_min.params)}$'))
-                display(Latex(f'Maximum of confidence interval: ${make_latex_transition(result_max.params)}$'))
+                print("Minimum of confidence interval:")
+                display(Latex(f'$${make_latex_transition(result_min.params)}$$'))
+                print("Maximum of confidence interval:")
+                display(Latex(f'$${make_latex_transition(result_max.params)}$$'))
             
         elif fit_func == 'dip':
-            display(Latex(f'Fit: ${make_latex_dip(result.params)}$'))
+            print("Fit:")
+            display(Latex(f'$${make_latex_dip(result.params)}$$'))
             if print_params_bool:
-                display(Latex(f'Minimum of confidence interval: ${make_latex_dip(result_min.params)}$'))
-                display(Latex(f'Maximum of confidence interval: ${make_latex_dip(result_max.params)}$'))
+                print("Minimum of confidence interval:")
+                display(Latex(f'$${make_latex_dip(result_min.params)}$$'))
+                print("Maximum of confidence interval:")
+                display(Latex(f'$${make_latex_dip(result_max.params)}$$'))
             
         elif fit_func == 'hardening':
-            display(Latex(f'Fit: ${make_latex_hardening(result.params)}$'))
+            print("Fit:")
+            display(Latex(f'$${make_latex_hardening(result.params)}$$'))
             if print_params_bool:
-                display(Latex(f'Minimum of confidence interval: ${make_latex_hardening(result_min.params)}$'))
-                display(Latex(f'Maximum of confidence interval: ${make_latex_hardening(result_max.params)}$'))
+                print("Minimum of confidence interval:")
+                display(Latex(f'$${make_latex_hardening(result_min.params)}$$'))
+                print("Maximum of confidence interval:")
+                display(Latex(f'$${make_latex_hardening(result_max.params)}$$'))
 
         elif fit_func == 'swelling':
-            display(Latex(f'Fit: ${make_latex_swelling(result.params)}$'))
+            print("Fit:")
+            display(Latex(f'$${make_latex_swelling(result.params)}$$'))
             if print_params_bool:
-                display(Latex(f'Minimum of confidence interval: ${make_latex_swelling(result_min.params)}$'))
-                display(Latex(f'Maximum of confidence interval: ${make_latex_swelling(result_max.params)}$'))
+                print("Minimum of confidence interval:")
+                display(Latex(f'$${make_latex_swelling(result_min.params)}$$'))
+                print("Maximum of confidence interval:")
+                display(Latex(f'$${make_latex_swelling(result_max.params)}$$'))
             
         else:
             pass # valid fit_func string checked in previous if block
