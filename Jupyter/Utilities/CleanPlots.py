@@ -20,7 +20,7 @@ def DATAPLOT(
         scale='linear',
         x_lim=None,
         y_lim=None,
-        grid=False,
+        grid=True,
         legend_loc="best",
         legend_num_cols=2,
         legend_font_size=4
