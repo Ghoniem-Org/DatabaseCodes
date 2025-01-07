@@ -3,17 +3,17 @@ from itertools import cycle
 import matplotlib.pyplot as plt
 
 def DATAPLOT(
-        x_data_list:list,
-        y_data_list:list,
-        x_label:str,
-        y_label:str,
-        title:str,
+        x_data_list=None,
+        y_data_list=None,
+        x_label=None,
+        y_label=None,
+        title=None,
         data_labels=None,
         marker_size=25,
         x_fit_list=None,
         y_fit_list=None,
         fit_labels=None,
-        fit_line_width=2,
+        fit_line_width=1,
         fit_colors=None,
         xy_label_font_size=10,
         title_font_size=10,
@@ -73,10 +73,11 @@ def DATAPLOT(
     marker_cycle = cycle(('o', '^', 'v', '<', '>', 'd', 's', '*'))
     data_colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
 
-    # Plot data points
-    for i, (x_data, y_data) in enumerate(zip(x_data_list, y_data_list)):
-        plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], s=marker_size,
-                    marker=next(marker_cycle))
+    # Plot data points if provided
+    if x_data_list is not None and y_data_list is not None:
+        for i, (x_data, y_data) in enumerate(zip(x_data_list, y_data_list)):
+            plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], s=marker_size,
+                        marker=next(marker_cycle))
 
     # Plot fit lines if provided
     if x_fit_list is not None and y_fit_list is not None:
@@ -106,8 +107,12 @@ def DATAPLOT(
     if grid:
         plt.grid(True)
 
-    plt.xlabel(x_label, fontsize=xy_label_font_size)
-    plt.ylabel(y_label, fontsize=xy_label_font_size)
-    plt.title(title, fontsize=title_font_size)
+    if x_label is not None:
+        plt.xlabel(x_label, fontsize=xy_label_font_size)
+    if y_label is not None:
+        plt.ylabel(y_label, fontsize=xy_label_font_size)
+    if title is not None:
+        plt.title(title, fontsize=title_font_size)
+
     plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
 
