@@ -23,7 +23,10 @@ def DATAPLOT(
         grid=True,
         legend_loc="best",
         legend_num_cols=2,
-        legend_font_size=4
+        legend_font_size=4,
+        conf_int=False,
+        sigma=3,
+        dely=None
 ):
     """
     Plots scatter data and optional fit lines with customizable styles.
@@ -52,8 +55,9 @@ def DATAPLOT(
     """
 
     # Input validation
-    if len(x_data_list) != len(y_data_list):
-        raise ValueError("x_data_list and y_data_list must have the same length.")
+    if x_data_list is not None and y_data_list is not None:
+        if len(x_data_list) != len(y_data_list):
+            raise ValueError("x_data_list and y_data_list must have the same length.")
 
     if x_fit_list is not None and y_fit_list is not None:
         if len(x_fit_list) != len(y_fit_list):
@@ -62,11 +66,17 @@ def DATAPLOT(
     if scale not in ['linear', 'log-log', 'log-x', 'log-y']:
         raise ValueError("Scale must be 'linear', 'log-log', 'log-x', or 'log-y'.")
 
-    if data_labels is None:
+    if data_labels is None and x_data_list is not None:
         data_labels = [f'Data{i + 1}' for i in range(len(x_data_list))]
 
-    if fit_labels is None:
-        fit_labels = [f'Data{i + 1} fit' for i in range(len(x_data_list))]
+    if fit_labels is None and x_fit_list is not None:
+        if data_labels is None:
+            fit_labels = [f'Data{i + 1} fit' for i in range(len(x_fit_list))]
+        else:
+            fit_labels = [f'{i} fit' for i in data_labels]
+
+    if conf_int and dely is None:
+        raise ValueError("dely cannot be None.")
 
     # Plot initialization
     plt.figure(figsize=(6, 4), dpi=300)
@@ -76,8 +86,7 @@ def DATAPLOT(
     # Plot data points if provided
     if x_data_list is not None and y_data_list is not None:
         for i, (x_data, y_data) in enumerate(zip(x_data_list, y_data_list)):
-            plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], s=marker_size,
-                        marker=next(marker_cycle))
+            plt.scatter(x_data, y_data, label=data_labels[i], color=data_colors[i], s=marker_size, marker=next(marker_cycle))
 
     # Plot fit lines if provided
     if x_fit_list is not None and y_fit_list is not None:
@@ -86,6 +95,9 @@ def DATAPLOT(
         for i, (x_fit, y_fit) in enumerate(zip(x_fit_list, y_fit_list)):
             color = fit_colors[i % len(fit_colors)]
             plt.plot(x_fit, y_fit, label=f"{fit_labels[i]}", color=color, linewidth=fit_line_width)
+
+            if conf_int:
+                plt.fill_between(x_fit, y_fit - dely, y_fit + dely, color='blue', alpha=0.2, label=str(sigma) + "σ Conf. Int.")
 
     if scale == 'linear':
         plt.xscale('linear')
@@ -115,4 +127,5 @@ def DATAPLOT(
         plt.title(title, fontsize=title_font_size)
 
     plt.legend(loc=legend_loc, fontsize=legend_font_size, ncol=legend_num_cols)
+    plt.show()
 
