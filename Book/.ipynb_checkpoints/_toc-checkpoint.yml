@@ -1,0 +1,27 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Tungsten
+    chapters:
+    - file: W_0 Abstract
+    - file: W_1 Introduction
+    - file: W_2 Fabrication & Microstructure
+    - file: W_3 Thermophysical Properties
+    - file: W_4 Mechanical Properties
+  - caption: Eurofer
+    chapters:
+    - file: Eurofer_0 Abstract
+    - file: Eurofer_1 Manufacturing & Heat Treatment
+    - file: Eurofer_2 Thermophysical Properties
+    - file: Eurofer_3 Mechanical Properties
+  - caption: F82H
+    chapters:
+    - file: F82H_0 Abstract
+    - file: F82H_1 Introduction
+    - file: F82H_2 Fabrication & Microstructure
+    - file: F82H_3 Thermophysical Properties
+    - file: F82H_4 Mechanical Properties
+    - file: F82H_5 Radiation Effects on Mechanical Properties

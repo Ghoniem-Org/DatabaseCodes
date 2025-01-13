@@ -1,0 +1,2390 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3 Thermophysical Properties &#8212; Fusion Material Database</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'W_3 Thermophysical Properties';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4 Mechanical Properties" href="W_4%20Mechanical%20Properties.html" />
+    <link rel="prev" title="2 Fabrication &amp; Microstructure" href="W_2%20Fabrication%20%26%20Microstructure.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/foam4_string.jpg" class="logo__image only-light" alt="Fusion Material Database - Home"/>
+    <script>document.write(`<img src="_static/foam4_string.jpg" class="logo__image only-dark" alt="Fusion Material Database - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to the Fusion Material Database
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tungsten</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="W_0%20Abstract.html">0 Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="W_1%20Introduction.html">1 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="W_2%20Fabrication%20%26%20Microstructure.html">2 Fabrication &amp; Microstructure</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3 Thermophysical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="W_4%20Mechanical%20Properties.html">4 Mechanical Properties</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Eurofer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Eurofer_0%20Abstract.html">0 Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eurofer_1%20Manufacturing%20%26%20Heat%20Treatment.html">1 Manufacturing &amp; Heat Treatment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eurofer_2%20Thermophysical%20Properties.html">2 Thermophysical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eurofer_3%20Mechanical%20Properties.html">3 Mechanical Properties</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">F82H</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="F82H_0%20Abstract.html">0 Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F82H_1%20Introduction.html">1 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F82H_2%20Fabrication%20%26%20Microstructure.html">2 Fabrication and Microstructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F82H_3%20Thermophysical%20Properties.html">3 Thermophysical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F82H_4%20Mechanical%20Properties.html">4 Mechanical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F82H_5%20Radiation%20Effects%20on%20Mechanical%20Properties.html">5 Radiation Effects on Mechanical Properties</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Ghoniem-Org/DatabaseCodes" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Ghoniem-Org/DatabaseCodes/issues/new?title=Issue%20on%20page%20%2FW_3 Thermophysical Properties.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/W_3 Thermophysical Properties.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3 Thermophysical Properties</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density">3.1 Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-thermal-expansion">3.2 Coefficient of Thermal Expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-heat">3.3 Specific Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-conductivity">3.4 Thermal Conductivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-diffusivity">3.5 Thermal Diffusivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-emissivity">3.6 Thermal Emissivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-resistivity">3.7 Electrical Resistivity</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="thermophysical-properties">
+<h1>3 Thermophysical Properties<a class="headerlink" href="#thermophysical-properties" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">models_2_0</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">plots_2_0</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="c1"># Excel spreadsheet and material name strings</span>
+<span class="n">excel_filename</span> <span class="o">=</span> <span class="s1">&#39;Tungsten_data.xlsx&#39;</span>
+<span class="n">material_name</span> <span class="o">=</span> <span class="s2">&quot;Tungsten&quot;</span>
+
+<span class="n">RT</span> <span class="o">=</span> <span class="mi">273</span>
+<span class="n">f_size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">legend_size</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">m_size</span> <span class="o">=</span> <span class="mi">35</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="density">
+<h2>3.1 Density<a class="headerlink" href="#density" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">W_rho</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">T</span> <span class="o">&lt;=</span> <span class="mi">3695</span><span class="p">:</span>
+        <span class="n">rho</span> <span class="o">=</span> <span class="mf">19.25</span> <span class="o">-</span> <span class="mf">2.66207e-4</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mi">298</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.0595e-9</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mi">298</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">9.5185e-12</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mi">298</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+    <span class="k">elif</span> <span class="mi">3695</span> <span class="o">&lt;</span> <span class="n">T</span> <span class="o">&lt;=</span> <span class="mi">6000</span><span class="p">:</span>
+        <span class="n">rho</span> <span class="o">=</span> <span class="mf">16.267</span> <span class="o">-</span> <span class="mf">7.679e-4</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mi">3695</span><span class="p">)</span> <span class="o">-</span> <span class="mf">8.091e-8</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mi">3695</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Temperature is out of the expected range (0K to 6000K)&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">rho</span> <span class="o">*</span> <span class="mf">1e3</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">6001</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">W_rho</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">T</span><span class="p">])</span>
+
+<span class="n">title</span><span class="o">=</span><span class="s1">&#39;W Density&#39;</span>
+<span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Temperature [K]&#39;</span>
+<span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Density [Kg/m^3]&#39;</span>
+<span class="n">xlim_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">]</span>
+<span class="n">ylim_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">25e3</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">generic_plot</span><span class="p">(</span><span class="n">x_data</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">y_data</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">xlim_range</span><span class="o">=</span><span class="n">xlim_range</span><span class="p">,</span> <span class="n">ylim_range</span><span class="o">=</span><span class="n">ylim_range</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fsize1</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fsize2</span><span class="o">=</span><span class="n">fsize2</span><span class="p">,</span> <span class="n">fsize3</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e3cc9e1e0a6c2393f1ccd63c7c43eb58f3a058c46424e6313376f2a9f1f0f8d0.png" src="_images/e3cc9e1e0a6c2393f1ccd63c7c43eb58f3a058c46424e6313376f2a9f1f0f8d0.png" />
+</div>
+</div>
+</section>
+<section id="coefficient-of-thermal-expansion">
+<h2>3.2 Coefficient of Thermal Expansion<a class="headerlink" href="#coefficient-of-thermal-expansion" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_property</span> <span class="o">=</span> <span class="s2">&quot;W_CTE&quot;</span>
+<span class="n">var_names</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">dataframe</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">excel_filename</span><span class="p">,</span> <span class="n">material_property</span><span class="p">,</span> <span class="n">header_rows_list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">num_data_rows</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">x_label</span><span class="o">=</span><span class="s1">&#39;Temperature [C]&#39;</span>
+<span class="n">y_label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;CTE [$10^{-6}$/K]&#39;</span>
+<span class="n">x_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">400</span><span class="p">,</span><span class="mi">2000</span><span class="p">]</span>
+<span class="n">y_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">data_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**Data Source:**  </span>
+<span class="s2">- [Schmnidt1963--THE ENGINEERING PROPERTIES OF TUNGSTEN AND TUNGSTEN ALLOYS.pdf](https://drive.google.com/file/d/1zVKWktn90TJ5NX6dQBbdpRMyT2ylgfMw/view?usp=drive_link)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Concatenate and sort data for fitting</span>
+<span class="n">vars_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">variables</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">/</span><span class="mf">1.8</span>
+<span class="n">vars_y</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Fit the data</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">fit_result</span> <span class="o">=</span> <span class="n">get_model_fit_and_print_it</span><span class="p">(</span><span class="n">vars_x</span><span class="p">,</span> <span class="n">vars_y</span><span class="p">,</span> <span class="n">fit_func</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="n">param_initials</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;leastsq&#39;</span><span class="p">,</span>\
+    <span class="n">material_name</span><span class="o">=</span><span class="n">material_name</span><span class="p">,</span> <span class="n">property_name</span><span class="o">=</span><span class="n">material_property</span><span class="p">,</span> <span class="n">eq_digits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">print_bool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plot_data</span><span class="p">(</span><span class="n">vars_x</span><span class="p">,</span> <span class="n">vars_y</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">fit_result</span><span class="p">,</span> <span class="n">f_size</span><span class="p">,</span> <span class="n">m_size</span><span class="p">,</span>\
+          <span class="n">x_label</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">x_lim</span><span class="p">,</span> <span class="n">y_lim</span><span class="p">,</span> <span class="n">data_labels</span><span class="p">,</span>\
+          <span class="n">title</span><span class="o">=</span><span class="n">material_property</span> <span class="o">+</span> <span class="s2">&quot; of &quot;</span> <span class="o">+</span> <span class="n">material_name</span><span class="p">,</span> <span class="n">legend_loc</span> <span class="o">=</span> <span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">CTE_coef</span> <span class="o">=</span> <span class="p">[</span><span class="n">fit_result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">fit_result</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">CTE</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">CTE_coef</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CTE_coef</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EUROFER97TempF</th>
+      <th>EUROFER97CoefficientofThermalExpansion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>799.640820</td>
+      <td>2.423116</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2195.319239</td>
+      <td>2.760268</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3619.283612</td>
+      <td>4.164268</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><p><strong>Data Source:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1zVKWktn90TJ5NX6dQBbdpRMyT2ylgfMw/view?usp=drive_link">Schmnidt1963–THE ENGINEERING PROPERTIES OF TUNGSTEN AND TUNGSTEN ALLOYS.pdf</a></p></li>
+</ul>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\indro\miniconda3\envs\jb\Lib\site-packages\lmfit\model.py:1730: RuntimeWarning: invalid value encountered in divide
+  fjac[key][i] = (np.atleast_1d(res1[key]).view(&#39;float64&#39;).ravel()
+</pre></div>
+</div>
+<div class="output text_html"><hr></div><p><strong>Fitting parameters for Tungsten W_CTE</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[Model]]
+    Model(polynomial)
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 13
+    # data points      = 3
+    # variables        = 3
+    chi-square         = 3.000e-250
+    reduced chi-square = 0.00000000
+    Akaike info crit   = -1720.93882
+    Bayesian info crit = -1723.64298
+##  Warning: uncertainties could not be estimated:
+[[Variables]]
+    c0:  2.67610567 +/- 0.00000000 (0.00%) (init = 1)
+    c1: -9.5802e-04 +/- 0.00000000 (0.00%) (init = 1)
+    c2:  8.5539e-07 +/- 0.00000000 (0.00%) (init = 2)
+</pre></div>
+</div>
+<div class="output text_html"><hr></div><p><strong>The equations for Tungsten W_CTE are:</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 2.68 - 9.58 \times 10^{-4} T + 8.55 \times 10^{-7} T^{2}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + \text{NaN} + \text{NaN} + \text{NaN}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + \text{NaN} + \text{NaN} + \text{NaN}  }\]</div>
+<img alt="_images/b47bf3b0c4d98105c6fda522da229629f83f8fb20cab8d0dced970bbc94b20f4.png" src="_images/b47bf3b0c4d98105c6fda522da229629f83f8fb20cab8d0dced970bbc94b20f4.png" />
+</div>
+</div>
+</section>
+<section id="specific-heat">
+<h2>3.3 Specific Heat<a class="headerlink" href="#specific-heat" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_property</span> <span class="o">=</span> <span class="s2">&quot;W_specific_heat&quot;</span>
+<span class="n">var_names</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">excel_filename</span><span class="p">,</span> <span class="n">material_property</span><span class="p">,</span> <span class="n">header_rows_list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">num_data_rows</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
+<span class="n">x_label</span> <span class="o">=</span> <span class="s1">&#39;Temperature [K]&#39;</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Cp [J $Kg^{-1} K^{-1}$]&#39;</span>
+<span class="n">x_lim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">2400</span><span class="p">]</span>
+<span class="n">y_lim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">data_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**Data Source:**  </span>
+<span class="s2">- [Lowenthal1962--The specific heat of metals between 1200 K and 2400 K.](https://drive.google.com/file/d/1Lht4yt4lj6nqYwLpXq2Aohu_0Uwa07xr/view?usp=drive_link)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Concatenate and sort data for fitting</span>
+<span class="n">vars_x</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">vars_y</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">T_data</span><span class="p">,</span> <span class="n">Y_data</span> <span class="o">=</span> <span class="n">concatenate_and_sort</span><span class="p">(</span><span class="n">vars_x</span><span class="p">,</span> <span class="n">vars_y</span><span class="p">)</span>
+<span class="n">x_data_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vars_x</span><span class="p">]</span>
+<span class="n">y_data_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">vars_y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">22.76</span><span class="p">]</span>
+
+<span class="c1"># Fit the data</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1200</span><span class="p">,</span><span class="mi">2400</span><span class="p">,</span><span class="mi">1200</span><span class="p">)</span>
+<span class="n">fit_result</span> <span class="o">=</span> <span class="n">get_model_fit_and_print_it</span><span class="p">(</span><span class="n">T_data</span><span class="p">,</span> <span class="n">Y_data</span><span class="o">*</span><span class="mf">22.76</span><span class="p">,</span> <span class="n">fit_func</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="n">param_initials</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;leastsq&#39;</span><span class="p">,</span>\
+    <span class="n">material_name</span><span class="o">=</span><span class="n">material_name</span><span class="p">,</span> <span class="n">property_name</span><span class="o">=</span><span class="n">material_property</span><span class="p">,</span> <span class="n">eq_digits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">print_bool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plot_data</span><span class="p">(</span><span class="n">x_data_list</span><span class="p">,</span> <span class="n">y_data_list</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">fit_result</span><span class="p">,</span> <span class="n">f_size</span><span class="p">,</span> <span class="n">m_size</span><span class="p">,</span>\
+          <span class="n">x_label</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">x_lim</span><span class="p">,</span> <span class="n">y_lim</span><span class="p">,</span> <span class="n">data_labels</span><span class="p">,</span>\
+          <span class="n">title</span><span class="o">=</span><span class="n">material_property</span> <span class="o">+</span> <span class="s2">&quot; of &quot;</span> <span class="o">+</span> <span class="n">material_name</span><span class="p">,</span> <span class="n">legend_loc</span> <span class="o">=</span> <span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">cp_coef</span> <span class="o">=</span> <span class="p">[</span><span class="n">fit_result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">fit_result</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">SpecificHeat</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cp_coef</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cp_coef</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WTempK</th>
+      <th>WCp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1260.862944</td>
+      <td>6.774831</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1350.518020</td>
+      <td>6.849642</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1432.294615</td>
+      <td>6.914544</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1500.257352</td>
+      <td>6.989002</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1600.753775</td>
+      <td>7.068879</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1623.412843</td>
+      <td>7.088809</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1680.539054</td>
+      <td>7.153310</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1714.034647</td>
+      <td>7.183195</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1782.021492</td>
+      <td>7.233203</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1810.548436</td>
+      <td>7.302128</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1874.620149</td>
+      <td>7.322732</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1910.049200</td>
+      <td>7.391769</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1926.878964</td>
+      <td>7.323584</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1956.391923</td>
+      <td>7.392525</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1999.718741</td>
+      <td>7.451911</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2035.147792</td>
+      <td>7.520948</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2072.553695</td>
+      <td>7.585127</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2153.276773</td>
+      <td>7.718472</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2224.154162</td>
+      <td>7.836987</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2288.134265</td>
+      <td>7.950499</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2357.001051</td>
+      <td>8.108101</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2400.289295</td>
+      <td>8.206606</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><p><strong>Data Source:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1Lht4yt4lj6nqYwLpXq2Aohu_0Uwa07xr/view?usp=drive_link">Lowenthal1962–The specific heat of metals between 1200 K and 2400 K.</a></p></li>
+</ul>
+<div class="output text_html"><hr></div><p><strong>Fitting parameters for Tungsten W_specific_heat</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[Model]]
+    Model(polynomial)
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 16
+    # data points      = 22
+    # variables        = 4
+    chi-square         = 4.47791939
+    reduced chi-square = 0.24877330
+    Akaike info crit   = -27.0214466
+    Bayesian info crit = -22.6572768
+    R-squared          = 0.99734226
+[[Variables]]
+    c0:  59.5446165 +/- 20.1649719 (33.87%) (init = 1)
+    c1:  0.15498333 +/- 0.03406524 (21.98%) (init = 1)
+    c2: -8.6809e-05 +/- 1.8817e-05 (21.68%) (init = 1)
+    c3:  1.8477e-08 +/- 3.4028e-09 (18.42%) (init = 3)
+[[Correlations]] (unreported correlations are &lt; 0.100)
+    C(c2, c3) = -0.9986
+    C(c1, c2) = -0.9984
+    C(c0, c1) = -0.9982
+    C(c1, c3) = +0.9941
+    C(c0, c2) = +0.9933
+    C(c0, c3) = -0.9859
+</pre></div>
+</div>
+<div class="output text_html"><hr></div><p><strong>The equations for Tungsten W_specific_heat are:</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 5.95 \times 10^{1} + 1.55 \times 10^{-1} T - 8.68 \times 10^{-5} T^{2} + 1.85 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 5.08 \times 10^{1} + 1.65 \times 10^{-1} T - 9.01 \times 10^{-5} T^{2} + 1.87 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 6.83 \times 10^{1} + 1.45 \times 10^{-1} T - 8.36 \times 10^{-5} T^{2} + 1.82 \times 10^{-8} T^{3}  }\]</div>
+<img alt="_images/0ef48513e2a1d9d31b2cbfeefdb33c4515307290c49b149f20b2f47dc8748dab.png" src="_images/0ef48513e2a1d9d31b2cbfeefdb33c4515307290c49b149f20b2f47dc8748dab.png" />
+</div>
+</div>
+</section>
+<section id="thermal-conductivity">
+<h2>3.4 Thermal Conductivity<a class="headerlink" href="#thermal-conductivity" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">W_k</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">300</span> <span class="o">&lt;=</span> <span class="n">T</span> <span class="o">&lt;=</span> <span class="mi">3695</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mf">149.441</span> <span class="o">-</span> <span class="mf">45.466e-3</span> <span class="o">*</span> <span class="n">T</span> <span class="o">+</span> <span class="mf">13.193e-6</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">1.484e-9</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">3.866e6</span> <span class="o">/</span> <span class="p">(</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mi">3695</span> <span class="o">&lt;</span> <span class="n">T</span> <span class="o">&lt;=</span> <span class="mi">6000</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mf">66.6212</span> <span class="o">+</span> <span class="mf">0.02086</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mi">3695</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.7585e-6</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mi">3695</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Temperature is out of the expected range (300K to 6000K)&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">k</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">6001</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">W_k</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">T</span><span class="p">])</span>
+
+<span class="n">title</span><span class="o">=</span><span class="s1">&#39;Thermal Conductivity of pure W&#39;</span>
+<span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Temperature [K]&#39;</span>
+<span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Thermal Conductivity [W/m.K]&#39;</span>
+<span class="n">xlim_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">]</span>
+<span class="n">ylim_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">generic_plot</span><span class="p">(</span><span class="n">x_data</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">y_data</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">xlim_range</span><span class="o">=</span><span class="n">xlim_range</span><span class="p">,</span> <span class="n">ylim_range</span><span class="o">=</span><span class="n">ylim_range</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fsize1</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fsize2</span><span class="o">=</span><span class="n">fsize2</span><span class="p">,</span> <span class="n">fsize3</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**Data Source:**  </span>
+<span class="s2">- [Tolias2017--thermophysical properties of solid and liquid tungsten relevant.pdf](https://drive.google.com/file/d/1yjf497SdhnkfiJqxQwKkY1LkHd0omkAP/view?usp=drive_link)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Data Source:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1yjf497SdhnkfiJqxQwKkY1LkHd0omkAP/view?usp=drive_link">Tolias2017–thermophysical properties of solid and liquid tungsten relevant.pdf</a></p></li>
+</ul>
+<img alt="_images/4677a1ddd40301161370545813a85bd609b3b9ac8ad796705031f151d0c45b3f.png" src="_images/4677a1ddd40301161370545813a85bd609b3b9ac8ad796705031f151d0c45b3f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_property</span> <span class="o">=</span> <span class="s2">&quot;W_conductivity&quot;</span>
+<span class="n">var_names</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">datafream</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">excel_filename</span><span class="p">,</span> <span class="n">material_property</span><span class="p">,</span> <span class="n">header_rows_list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">num_data_rows</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">x_label</span><span class="o">=</span><span class="s1">&#39;Temperature [C]&#39;</span>
+<span class="n">y_label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Thermal Conductivity [W/m.K]&#39;</span>
+<span class="n">x_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1100</span><span class="p">]</span>
+<span class="n">y_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">data_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**Data Source:**  </span>
+<span class="s2">- [Nogami2021-- Mechanical properties of tungsten-Recent research on modified tungsten materials in Japan](https://drive.google.com/file/d/1zauZKW21QloQ4LA3BcDXD8PHHT6UuJVX/view?usp=drive_link)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Concatenate and sort data for fitting</span>
+<span class="n">vars_x</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">vars_y</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">T_data</span><span class="p">,</span> <span class="n">Y_data</span> <span class="o">=</span> <span class="n">concatenate_and_sort</span><span class="p">(</span><span class="n">vars_x</span><span class="p">,</span> <span class="n">vars_y</span><span class="p">)</span>
+<span class="n">x_data_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vars_x</span><span class="p">]</span>
+<span class="n">y_data_list</span> <span class="o">=</span> <span class="n">vars_y</span>
+
+<span class="c1"># Fit the data</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1100</span><span class="p">,</span><span class="mi">1100</span><span class="p">)</span>
+<span class="n">fit_result0</span> <span class="o">=</span> <span class="n">get_model_fit_and_print_it</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vars_x</span><span class="p">)[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vars_y</span><span class="p">)[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">fit_func</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="n">param_initials</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;leastsq&#39;</span><span class="p">,</span> <span class="n">material_name</span><span class="o">=</span><span class="n">material_name</span><span class="p">,</span> <span class="n">property_name</span><span class="o">=</span><span class="n">material_property</span><span class="p">,</span> <span class="n">eq_digits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">print_bool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fit_result1</span> <span class="o">=</span> <span class="n">get_model_fit_and_print_it</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vars_x</span><span class="p">)[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vars_y</span><span class="p">)[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">fit_func</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="n">param_initials</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;leastsq&#39;</span><span class="p">,</span> <span class="n">material_name</span><span class="o">=</span><span class="n">material_name</span><span class="p">,</span> <span class="n">property_name</span><span class="o">=</span><span class="n">material_property</span><span class="p">,</span> <span class="n">eq_digits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">print_bool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">data_plot</span><span class="p">(</span><span class="n">x_data_list</span><span class="p">,</span> <span class="n">y_data_list</span><span class="p">,</span> <span class="n">x_label</span><span class="o">=</span><span class="n">x_label</span><span class="p">,</span> 
+          <span class="n">y_label</span><span class="o">=</span><span class="n">y_label</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">material_property</span> <span class="o">+</span> <span class="s2">&quot; of &quot;</span> <span class="o">+</span> <span class="n">material_name</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_lim</span><span class="o">=</span><span class="n">x_lim</span><span class="p">,</span> <span class="n">y_lim</span><span class="o">=</span><span class="n">y_lim</span><span class="p">,</span>
+          <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data_labels</span><span class="o">=</span><span class="n">data_labels</span><span class="p">,</span> <span class="n">fit_labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;fit1&#39;</span><span class="p">,</span> <span class="s1">&#39;fit2&#39;</span><span class="p">],</span>
+          <span class="n">data_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fit_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker_size</span><span class="o">=</span><span class="n">m_size</span><span class="p">,</span> 
+          <span class="n">fit_line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x_label_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span> <span class="n">y_label_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span>
+          <span class="n">title_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span> <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">legend_num_cols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="n">fit_plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">fit_result0</span><span class="p">,</span> <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">fit_label</span><span class="o">=</span><span class="s1">&#39;Data Fit W &#39;</span><span class="p">,</span> <span class="n">fit_line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">fit_plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">fit_result1</span><span class="p">,</span> <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">fit_label</span><span class="o">=</span><span class="s1">&#39;Data Fit W with Re&#39;</span><span class="p">,</span> <span class="n">fit_line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">rho_coeff</span> <span class="o">=</span> <span class="p">[</span><span class="n">fit_result0</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">fit_result0</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">ThermalConductivity</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">rho_coeff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rho_coeff</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WPureTempC</th>
+      <th>WPureThermalConductivityW/mk</th>
+      <th>WKdopedTempC1</th>
+      <th>WKdopedThermalConductivityW/mk1</th>
+      <th>W1%ReTempC2</th>
+      <th>W1%ReThermalConductivityW/mk2</th>
+      <th>W3%ReTempC3</th>
+      <th>W3%ReThermalConductivityW/mk3</th>
+      <th>WKdoped3%ReTempC4</th>
+      <th>WKdoped3%ReThermalConductivityW/mk4</th>
+      <th>WKdopedRodTempC5</th>
+      <th>WKdopedRodThermalConductivityW/mk5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>34.348089</td>
+      <td>175.566265</td>
+      <td>32.567222</td>
+      <td>167.662651</td>
+      <td>32.161059</td>
+      <td>147.614458</td>
+      <td>26.552889</td>
+      <td>110.795181</td>
+      <td>31.458085</td>
+      <td>112.915663</td>
+      <td>21.350882</td>
+      <td>174.024096</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>105.680420</td>
+      <td>176.530120</td>
+      <td>98.900627</td>
+      <td>161.879518</td>
+      <td>96.881529</td>
+      <td>142.216867</td>
+      <td>99.474722</td>
+      <td>110.216867</td>
+      <td>99.564547</td>
+      <td>114.650602</td>
+      <td>97.408760</td>
+      <td>168.240964</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>204.221749</td>
+      <td>160.530120</td>
+      <td>200.859190</td>
+      <td>154.554217</td>
+      <td>201.894124</td>
+      <td>125.638554</td>
+      <td>196.660874</td>
+      <td>107.325301</td>
+      <td>198.406592</td>
+      <td>113.493976</td>
+      <td>200.765461</td>
+      <td>149.927711</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>302.821659</td>
+      <td>147.421687</td>
+      <td>301.138427</td>
+      <td>144.337349</td>
+      <td>302.235848</td>
+      <td>118.506024</td>
+      <td>300.341723</td>
+      <td>105.012048</td>
+      <td>303.688661</td>
+      <td>110.216867</td>
+      <td>297.807112</td>
+      <td>139.903614</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>401.566070</td>
+      <td>141.445783</td>
+      <td>399.871121</td>
+      <td>137.783133</td>
+      <td>402.722071</td>
+      <td>118.506024</td>
+      <td>402.483841</td>
+      <td>106.746988</td>
+      <td>400.945109</td>
+      <td>110.795181</td>
+      <td>399.789108</td>
+      <td>133.734940</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>501.981996</td>
+      <td>137.975904</td>
+      <td>503.563687</td>
+      <td>136.048193</td>
+      <td>503.200484</td>
+      <td>118.120482</td>
+      <td>502.981781</td>
+      <td>107.325301</td>
+      <td>504.688446</td>
+      <td>111.566265</td>
+      <td>501.782820</td>
+      <td>128.144578</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>602.362774</td>
+      <td>132.771084</td>
+      <td>602.343247</td>
+      <td>131.807229</td>
+      <td>603.647654</td>
+      <td>116.192771</td>
+      <td>600.214798</td>
+      <td>106.746988</td>
+      <td>603.550019</td>
+      <td>111.373494</td>
+      <td>600.562379</td>
+      <td>123.903614</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>704.356486</td>
+      <td>127.180723</td>
+      <td>701.138427</td>
+      <td>128.337349</td>
+      <td>700.892386</td>
+      <td>116.192771</td>
+      <td>700.693210</td>
+      <td>106.361446</td>
+      <td>700.783035</td>
+      <td>110.795181</td>
+      <td>699.369276</td>
+      <td>121.012048</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>801.484056</td>
+      <td>121.397590</td>
+      <td>799.921892</td>
+      <td>124.289157</td>
+      <td>802.995450</td>
+      <td>116.000000</td>
+      <td>801.191150</td>
+      <td>106.939759</td>
+      <td>798.027767</td>
+      <td>110.795181</td>
+      <td>803.038410</td>
+      <td>118.120482</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>901.915604</td>
+      <td>118.698795</td>
+      <td>901.962469</td>
+      <td>121.012048</td>
+      <td>901.860928</td>
+      <td>116.000000</td>
+      <td>901.665658</td>
+      <td>106.361446</td>
+      <td>903.325457</td>
+      <td>108.289157</td>
+      <td>901.896077</td>
+      <td>117.734940</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1002.436976</td>
+      <td>120.433735</td>
+      <td>1002.499463</td>
+      <td>123.518072</td>
+      <td>1002.351057</td>
+      <td>116.192771</td>
+      <td>1003.850735</td>
+      <td>110.216867</td>
+      <td>1000.648298</td>
+      <td>112.144578</td>
+      <td>1003.991330</td>
+      <td>117.156627</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1081.845697</td>
+      <td>120.048193</td>
+      <td>1080.256195</td>
+      <td>121.590361</td>
+      <td>1081.779305</td>
+      <td>116.771084</td>
+      <td>1080.107789</td>
+      <td>114.265060</td>
+      <td>1080.072641</td>
+      <td>112.530120</td>
+      <td>1083.384429</td>
+      <td>116.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><p><strong>Data Source:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1zauZKW21QloQ4LA3BcDXD8PHHT6UuJVX/view?usp=drive_link">Nogami2021– Mechanical properties of tungsten-Recent research on modified tungsten materials in Japan</a></p></li>
+</ul>
+<div class="output text_html"><hr></div><p><strong>Fitting parameters for Tungsten W_conductivity</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[Model]]
+    Model(polynomial)
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 16
+    # data points      = 36
+    # variables        = 4
+    chi-square         = 556.201297
+    reduced chi-square = 17.3812905
+    Akaike info crit   = 106.554008
+    Bayesian info crit = 112.888084
+    R-squared          = 0.95531562
+[[Variables]]
+    c0:  177.930693 +/- 2.44931353 (1.38%) (init = 1)
+    c1: -0.13240981 +/- 0.02032206 (15.35%) (init = 1)
+    c2:  9.6132e-05 +/- 4.3407e-05 (45.15%) (init = 1)
+    c3: -2.2117e-08 +/- 2.5724e-08 (116.31%) (init = 3)
+[[Correlations]] (unreported correlations are &lt; 0.100)
+    C(c2, c3) = -0.9867
+    C(c1, c2) = -0.9678
+    C(c1, c3) = +0.9174
+    C(c0, c1) = -0.8403
+    C(c0, c2) = +0.7150
+    C(c0, c3) = -0.6335
+</pre></div>
+</div>
+<div class="output text_html"><hr></div><p><strong>The equations for Tungsten W_conductivity are:</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 1.78 \times 10^{2} - 1.32 \times 10^{-1} T + 9.61 \times 10^{-5} T^{2} - 2.21 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 1.72 \times 10^{2} - 1.24 \times 10^{-1} T + 8.87 \times 10^{-5} T^{2} - 2.26 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 1.84 \times 10^{2} - 1.41 \times 10^{-1} T + 1.04 \times 10^{-4} T^{2} - 2.16 \times 10^{-8} T^{3}  }\]</div>
+<div class="output text_html"><hr></div><p><strong>Fitting parameters for Tungsten W_conductivity</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[Model]]
+    Model(polynomial)
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 16
+    # data points      = 36
+    # variables        = 4
+    chi-square         = 2128.94696
+    reduced chi-square = 66.5295924
+    Akaike info crit   = 154.875097
+    Bayesian info crit = 161.209173
+    R-squared          = 0.21953734
+[[Variables]]
+    c0:  125.760795 +/- 4.79299206 (3.81%) (init = 1)
+    c1: -0.05992729 +/- 0.04001920 (66.78%) (init = 1)
+    c2:  7.3013e-05 +/- 8.5632e-05 (117.28%) (init = 1)
+    c3: -2.5853e-08 +/- 5.0782e-08 (196.42%) (init = 3)
+[[Correlations]] (unreported correlations are &lt; 0.100)
+    C(c2, c3) = -0.9869
+    C(c1, c2) = -0.9683
+    C(c1, c3) = +0.9187
+    C(c0, c1) = -0.8405
+    C(c0, c2) = +0.7164
+    C(c0, c3) = -0.6360
+</pre></div>
+</div>
+<div class="output text_html"><hr></div><p><strong>The equations for Tungsten W_conductivity are:</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 1.26 \times 10^{2} - 5.99 \times 10^{-2} T + 7.3 \times 10^{-5} T^{2} - 2.59 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 1.14 \times 10^{2} - 4.37 \times 10^{-2} T + 6.03 \times 10^{-5} T^{2} - 2.79 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 1.37 \times 10^{2} - 7.62 \times 10^{-2} T + 8.57 \times 10^{-5} T^{2} - 2.38 \times 10^{-8} T^{3}  }\]</div>
+<img alt="_images/6ccaa7caa900c7c4f3169fef6f12bb49ed0a49de8190e930ed85015e1e166753.png" src="_images/6ccaa7caa900c7c4f3169fef6f12bb49ed0a49de8190e930ed85015e1e166753.png" />
+</div>
+</div>
+</section>
+<section id="thermal-diffusivity">
+<h2>3.5 Thermal Diffusivity<a class="headerlink" href="#thermal-diffusivity" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_property</span> <span class="o">=</span> <span class="s2">&quot;W_diffusivity&quot;</span>
+<span class="n">var_names</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">dataframe</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">excel_filename</span><span class="p">,</span> <span class="n">material_property</span><span class="p">,</span> <span class="n">header_rows_list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">num_data_rows</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">x_label</span> <span class="o">=</span> <span class="s1">&#39;Temperature [C]&#39;</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$Diffusivity [$mm$^2$/s]&#39;</span>
+<span class="n">x_lim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1200</span><span class="p">]</span>
+<span class="n">y_lim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+<span class="n">data_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**Data Source:**  </span>
+<span class="s2">- [Fukuda2018--Thermal properties of pure tungsten and its alloys for fusion applications](https://drive.google.com/file/d/1HnPIj_yDMyvEg-_nyPLBX7_9lSo6nPlP/view?usp=drive_link)  </span>
+<span class="s2">- [Tanabe2003--Temperature dependence of thermal conductivity in W and W–Re alloys from 300 to 1000 K](https://drive.google.com/file/d/1J9fqNc03hZZMfeQ57RfdYDqfaMAiDhWY/view?usp=drive_link)  </span>
+<span class="s2">- [Touloukian1974--Thermophysical Properties of Matter-The TPRC Data Series. Volume 10. Thermal Diffusivity](https://drive.google.com/file/d/1MQrFR5Kc7M4WEu0LpVEUsT3CWVTF1yF6/view?usp=drive_link)  </span>
+<span class="s2">- [Fujitsuka2000--Effect of neutron irradiation on thermal diffusivity of tungsten–rhenium alloys](https://drive.google.com/file/d/1LlHMZ-vDTaWnlpitQPfjvOoO5xZGedNo/view?usp=drive_link)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Concatenate and sort data for fitting</span>
+<span class="n">vars_x</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">vars_y</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">T_data</span><span class="p">,</span> <span class="n">Y_data</span> <span class="o">=</span> <span class="n">concatenate_and_sort</span><span class="p">(</span><span class="n">vars_x</span><span class="p">,</span> <span class="n">vars_y</span><span class="p">)</span>
+<span class="n">x_data_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vars_x</span><span class="p">]</span>
+<span class="n">y_data_list</span> <span class="o">=</span> <span class="n">vars_y</span>
+
+<span class="c1"># Fit the data</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1200</span><span class="p">,</span><span class="mi">1200</span><span class="p">)</span>
+<span class="n">fit_result</span> <span class="o">=</span> <span class="n">get_model_fit_and_print_it</span><span class="p">(</span><span class="n">T_data</span><span class="p">,</span> <span class="n">Y_data</span><span class="p">,</span> <span class="n">fit_func</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="n">param_initials</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;leastsq&#39;</span><span class="p">,</span>\
+    <span class="n">material_name</span><span class="o">=</span><span class="n">material_name</span><span class="p">,</span> <span class="n">property_name</span><span class="o">=</span><span class="n">material_property</span><span class="p">,</span> <span class="n">eq_digits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">print_bool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plot_data</span><span class="p">(</span><span class="n">x_data_list</span><span class="p">,</span> <span class="n">y_data_list</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">fit_result</span><span class="p">,</span> <span class="n">f_size</span><span class="p">,</span> <span class="n">m_size</span><span class="p">,</span>\
+          <span class="n">x_label</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">x_lim</span><span class="p">,</span> <span class="n">y_lim</span><span class="p">,</span> <span class="n">data_labels</span><span class="p">,</span>\
+          <span class="n">title</span><span class="o">=</span><span class="n">material_property</span> <span class="o">+</span> <span class="s2">&quot; of &quot;</span> <span class="o">+</span> <span class="n">material_name</span><span class="p">,</span> <span class="n">legend_loc</span> <span class="o">=</span> <span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">diffusivity_coef</span> <span class="o">=</span> <span class="p">[</span><span class="n">fit_result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">fit_result</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">ThermalDiffusivity</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">diffusivity_coef</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">diffusivity_coef</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WFujitsukaTempC</th>
+      <th>WFujitsukaThermalDiffusivityCoefmm2/s</th>
+      <th>WtanabeTempC1</th>
+      <th>WtanabeThermalDiffusivityCoefmm2/s1</th>
+      <th>WTouloukianTempC2</th>
+      <th>WTouloukianThermalDiffusivityCoefmm2/s2</th>
+      <th>WSingleCrystalTempC3</th>
+      <th>WSingleCrystalThermalDiffusivityCoefmm2/s3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>28.201282</td>
+      <td>71.586071</td>
+      <td>20.588269</td>
+      <td>64.556553</td>
+      <td>23.302820</td>
+      <td>66.200865</td>
+      <td>26.069032</td>
+      <td>68.796319</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>120.537905</td>
+      <td>69.786949</td>
+      <td>142.500900</td>
+      <td>59.774810</td>
+      <td>78.707603</td>
+      <td>62.819626</td>
+      <td>95.101018</td>
+      <td>64.397353</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>173.971327</td>
+      <td>65.341435</td>
+      <td>179.905802</td>
+      <td>57.562509</td>
+      <td>120.015090</td>
+      <td>59.687661</td>
+      <td>196.352816</td>
+      <td>58.208601</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>204.686914</td>
+      <td>61.333514</td>
+      <td>467.840243</td>
+      <td>49.052184</td>
+      <td>221.450146</td>
+      <td>54.367032</td>
+      <td>293.027000</td>
+      <td>53.633560</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>285.317603</td>
+      <td>60.804963</td>
+      <td>549.340853</td>
+      <td>47.167562</td>
+      <td>325.739377</td>
+      <td>50.866130</td>
+      <td>391.670972</td>
+      <td>51.749179</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>343.121446</td>
+      <td>54.843398</td>
+      <td>670.097187</td>
+      <td>45.166693</td>
+      <td>426.279736</td>
+      <td>47.992158</td>
+      <td>495.298409</td>
+      <td>49.429797</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>450.093666</td>
+      <td>51.627290</td>
+      <td>758.253427</td>
+      <td>43.927735</td>
+      <td>522.131093</td>
+      <td>45.745004</td>
+      <td>591.253669</td>
+      <td>47.493850</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>553.402218</td>
+      <td>48.508590</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>623.629057</td>
+      <td>43.812208</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>642.800094</td>
+      <td>46.366668</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>722.308960</td>
+      <td>42.004553</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>756.401983</td>
+      <td>44.863605</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>824.751714</td>
+      <td>40.322820</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>921.564171</td>
+      <td>39.205056</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1020.245239</td>
+      <td>37.460138</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1120.825207</td>
+      <td>36.719247</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><p><strong>Data Source:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1HnPIj_yDMyvEg-_nyPLBX7_9lSo6nPlP/view?usp=drive_link">Fukuda2018–Thermal properties of pure tungsten and its alloys for fusion applications</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1J9fqNc03hZZMfeQ57RfdYDqfaMAiDhWY/view?usp=drive_link">Tanabe2003–Temperature dependence of thermal conductivity in W and W–Re alloys from 300 to 1000 K</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1MQrFR5Kc7M4WEu0LpVEUsT3CWVTF1yF6/view?usp=drive_link">Touloukian1974–Thermophysical Properties of Matter-The TPRC Data Series. Volume 10. Thermal Diffusivity</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1LlHMZ-vDTaWnlpitQPfjvOoO5xZGedNo/view?usp=drive_link">Fujitsuka2000–Effect of neutron irradiation on thermal diffusivity of tungsten–rhenium alloys</a></p></li>
+</ul>
+<div class="output text_html"><hr></div><p><strong>Fitting parameters for Tungsten W_diffusivity</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[Model]]
+    Model(polynomial)
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 16
+    # data points      = 37
+    # variables        = 4
+    chi-square         = 228.748636
+    reduced chi-square = 6.93177684
+    Akaike info crit   = 75.4031156
+    Bayesian info crit = 81.8467873
+    R-squared          = 0.93177780
+[[Variables]]
+    c0:  69.2682493 +/- 1.32658223 (1.92%) (init = 1)
+    c1: -0.05814087 +/- 0.01177767 (20.26%) (init = 1)
+    c2:  4.0477e-05 +/- 2.6194e-05 (64.71%) (init = 1)
+    c3: -1.3226e-08 +/- 1.5926e-08 (120.42%) (init = 3)
+[[Correlations]] (unreported correlations are &lt; 0.100)
+    C(c2, c3) = -0.9839
+    C(c1, c2) = -0.9674
+    C(c1, c3) = +0.9125
+    C(c0, c1) = -0.8452
+    C(c0, c2) = +0.7237
+    C(c0, c3) = -0.6409
+</pre></div>
+</div>
+<div class="output text_html"><hr></div><p><strong>The equations for Tungsten W_diffusivity are:</strong></p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 6.93 \times 10^{1} - 5.81 \times 10^{-2} T + 4.05 \times 10^{-5} T^{2} - 1.32 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 6.6 \times 10^{1} - 5.28 \times 10^{-2} T + 3.6 \times 10^{-5} T^{2} - 1.57 \times 10^{-8} T^{3}  }\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum of confidence interval:
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\boxed{ + 7.25 \times 10^{1} - 6.35 \times 10^{-2} T + 4.5 \times 10^{-5} T^{2} - 1.08 \times 10^{-8} T^{3}  }\]</div>
+<img alt="_images/1d0cdf20fa77f612f7e7ccff1bb5d2e2ee67ba1cb89bd9d8f2d52ec64d62b754.png" src="_images/1d0cdf20fa77f612f7e7ccff1bb5d2e2ee67ba1cb89bd9d8f2d52ec64d62b754.png" />
+</div>
+</div>
+</section>
+<section id="thermal-emissivity">
+<h2>3.6 Thermal Emissivity<a class="headerlink" href="#thermal-emissivity" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_property</span> <span class="o">=</span> <span class="s2">&quot;W_emissivity&quot;</span>
+<span class="n">var_names</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">dataframe</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">excel_filename</span><span class="p">,</span> <span class="n">material_property</span><span class="p">,</span> <span class="n">header_rows_list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">num_data_rows</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">x_label</span> <span class="o">=</span> <span class="s1">&#39;Temperature [K]&#39;</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Thermal Emissivity&#39;</span>
+<span class="n">x_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3500</span><span class="p">]</span>
+<span class="n">y_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="n">data_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**Data Source:**  </span>
+<span class="s2">- [Forsythe--THE PROPERTIES OF TUNGSTEN AND THE CHAR- ACTERISTICS OF TUNGSTEN LAMPS.pdf](https://drive.google.com/file/d/1Iw3L-8V_43S0NLxPDxP7yJ_A2h379dj4/view?usp=drive_link)</span>
+<span class="s2">- [Matsumoto1999--Hemispherical Total Emissivity of Niobium, Molybdenum, and Tungsten at High Temperatures Using a Combined Transient and Brief Steady-State Technique.pdf](https://drive.google.com/file/d/1c6v2C_VoiWPI9h5eGWFHrmb0IjQ2oIyH/view?usp=drive_link)</span>
+<span class="s2">- [Brodu2015--Evolution of the emissivity of tungsten at high temperature with and without proton bombardment](https://drive.google.com/file/d/1zZ0fDKf94yGSIllnX69O0zBpwyMcAWUI/view?usp=drive_link)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+
+
+<span class="n">vars_x</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">vars_y</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Define the fit functions for the upper (εu), lower (εl), and average emissivity (εavg)</span>
+<span class="n">epsilon_avg_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="p">(</span><span class="n">epsilon_upper_func</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">+</span><span class="n">epsilon_lower_func</span><span class="p">(</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">epsilon_upper_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.55</span> <span class="o">+</span> <span class="mf">2e-5</span> <span class="o">*</span> <span class="n">T</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">((</span><span class="n">T</span> <span class="o">-</span> <span class="mi">700</span><span class="p">)</span> <span class="o">/</span> <span class="mi">650</span><span class="p">))</span>
+<span class="n">epsilon_lower_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.45</span> <span class="o">+</span> <span class="mf">4e-5</span> <span class="o">*</span> <span class="n">T</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">((</span><span class="n">T</span> <span class="o">-</span> <span class="mi">1100</span><span class="p">)</span> <span class="o">/</span> <span class="mi">700</span><span class="p">))</span>
+
+<span class="c1"># Example usage: Generate the fitted data</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3500</span><span class="p">,</span><span class="mi">3500</span><span class="p">)</span>
+<span class="n">Y_fit_avg</span> <span class="o">=</span> <span class="n">epsilon_avg_func</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">Y_fit_upper</span> <span class="o">=</span> <span class="n">epsilon_upper_func</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">Y_fit_lower</span> <span class="o">=</span> <span class="n">epsilon_lower_func</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+<span class="n">data_plot</span><span class="p">(</span><span class="n">vars_x</span><span class="p">,</span> <span class="n">vars_y</span><span class="p">,</span> <span class="n">x_fit_list</span><span class="o">=</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">],</span> <span class="n">y_fit_list</span><span class="o">=</span><span class="p">[</span><span class="n">Y_fit_upper</span><span class="p">,</span> <span class="n">Y_fit_lower</span><span class="p">,</span> <span class="n">Y_fit_avg</span><span class="p">],</span>\
+            <span class="n">x_label</span><span class="o">=</span><span class="n">x_label</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span><span class="n">y_label</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">material_property</span> <span class="o">+</span> <span class="s2">&quot; of &quot;</span> <span class="o">+</span> <span class="n">material_name</span><span class="p">,</span>\
+            <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_lim</span><span class="o">=</span><span class="n">x_lim</span><span class="p">,</span> <span class="n">y_lim</span><span class="o">=</span><span class="n">y_lim</span><span class="p">,</span>\
+            <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data_labels</span><span class="o">=</span><span class="n">data_labels</span><span class="p">,</span> <span class="n">fit_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;fit_avg&quot;</span><span class="p">,</span> <span class="s2">&quot;fit_upper&quot;</span><span class="p">,</span> <span class="s2">&quot;fit_lower&quot;</span><span class="p">],</span>\
+            <span class="n">data_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fit_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker_size</span><span class="o">=</span><span class="n">m_size</span><span class="p">,</span>\
+            <span class="n">fit_line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x_label_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span> <span class="n">y_label_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span> <span class="n">title_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span>\
+            <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">legend_num_cols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">NormalEmissivity</span> <span class="o">=</span> <span class="n">epsilon_avg_func</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WMinissale_shortTempK</th>
+      <th>WMinissale_shortThermalEmissivity</th>
+      <th>WMinissale_longTempK1</th>
+      <th>WMinissale_longThermalEmissivity1</th>
+      <th>WMinissale_intermediateTempK2</th>
+      <th>WMinissale_intermediateThermalEmissivity2</th>
+      <th>WBroduTempK3</th>
+      <th>WBroduThermalEmissivity3</th>
+      <th>WRudkinTempK4</th>
+      <th>WRudkinThermalEmissivity4</th>
+      <th>WMatsumotoTempK5</th>
+      <th>WMatsumotoThermalEmissivity5</th>
+      <th>WWorthingTempK6</th>
+      <th>WWorthingThermalEmissivity6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>42.44</td>
+      <td>0.02905</td>
+      <td>38.40</td>
+      <td>0.01385</td>
+      <td>43.07</td>
+      <td>0.01643</td>
+      <td>853.44</td>
+      <td>0.06718</td>
+      <td>1364.00</td>
+      <td>0.27669</td>
+      <td>1833.14</td>
+      <td>0.23873</td>
+      <td>1345.01</td>
+      <td>0.19629</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>158.90</td>
+      <td>0.04481</td>
+      <td>160.25</td>
+      <td>0.02073</td>
+      <td>156.92</td>
+      <td>0.02264</td>
+      <td>884.53</td>
+      <td>0.08141</td>
+      <td>1683.16</td>
+      <td>0.31258</td>
+      <td>1959.11</td>
+      <td>0.25306</td>
+      <td>1869.29</td>
+      <td>0.26863</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>276.74</td>
+      <td>0.06636</td>
+      <td>273.45</td>
+      <td>0.03824</td>
+      <td>277.69</td>
+      <td>0.03753</td>
+      <td>925.21</td>
+      <td>0.11031</td>
+      <td>1961.84</td>
+      <td>0.33309</td>
+      <td>2079.38</td>
+      <td>0.26529</td>
+      <td>2416.00</td>
+      <td>0.31879</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>461.49</td>
+      <td>0.10078</td>
+      <td>457.42</td>
+      <td>0.06514</td>
+      <td>460.21</td>
+      <td>0.06141</td>
+      <td>1024.28</td>
+      <td>0.15948</td>
+      <td>2244.50</td>
+      <td>0.34633</td>
+      <td>2163.37</td>
+      <td>0.27372</td>
+      <td>2958.98</td>
+      <td>0.34808</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>589.35</td>
+      <td>0.13616</td>
+      <td>610.29</td>
+      <td>0.08453</td>
+      <td>593.49</td>
+      <td>0.08716</td>
+      <td>1125.40</td>
+      <td>0.20176</td>
+      <td>2542.71</td>
+      <td>0.35573</td>
+      <td>2258.82</td>
+      <td>0.28299</td>
+      <td>3500.04</td>
+      <td>0.37027</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>724.59</td>
+      <td>0.16511</td>
+      <td>706.32</td>
+      <td>0.11330</td>
+      <td>721.15</td>
+      <td>0.11167</td>
+      <td>1160.33</td>
+      <td>0.22246</td>
+      <td>2819.71</td>
+      <td>0.35787</td>
+      <td>2354.32</td>
+      <td>0.28890</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1240.15</td>
+      <td>0.24877</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2447.86</td>
+      <td>0.29859</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1343.66</td>
+      <td>0.25999</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2541.46</td>
+      <td>0.30323</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1349.31</td>
+      <td>0.27551</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2682.83</td>
+      <td>0.30955</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1427.43</td>
+      <td>0.28414</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2789.79</td>
+      <td>0.31630</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1554.49</td>
+      <td>0.28889</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2915.87</td>
+      <td>0.32262</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1591.80</td>
+      <td>0.27810</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3080.16</td>
+      <td>0.33063</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1541.14</td>
+      <td>0.26430</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3252.15</td>
+      <td>0.33443</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3424.09</td>
+      <td>0.34202</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><p><strong>Data Source:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1Iw3L-8V_43S0NLxPDxP7yJ_A2h379dj4/view?usp=drive_link">Forsythe–THE PROPERTIES OF TUNGSTEN AND THE CHAR- ACTERISTICS OF TUNGSTEN LAMPS.pdf</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1c6v2C_VoiWPI9h5eGWFHrmb0IjQ2oIyH/view?usp=drive_link">Matsumoto1999–Hemispherical Total Emissivity of Niobium, Molybdenum, and Tungsten at High Temperatures Using a Combined Transient and Brief Steady-State Technique.pdf</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/1zZ0fDKf94yGSIllnX69O0zBpwyMcAWUI/view?usp=drive_link">Brodu2015–Evolution of the emissivity of tungsten at high temperature with and without proton bombardment</a></p></li>
+</ul>
+<img alt="_images/df6a52bae5ad729273907d9431e2f050da3563289061e68bcad0e24e47248367.png" src="_images/df6a52bae5ad729273907d9431e2f050da3563289061e68bcad0e24e47248367.png" />
+</div>
+</div>
+</section>
+<section id="electrical-resistivity">
+<h2>3.7 Electrical Resistivity<a class="headerlink" href="#electrical-resistivity" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">material_property</span> <span class="o">=</span> <span class="s2">&quot;W_resistivity&quot;</span>
+<span class="n">var_names</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">datafream</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">excel_filename</span><span class="p">,</span> <span class="n">material_property</span><span class="p">,</span> <span class="n">header_rows_list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">num_data_rows</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">x_label</span><span class="o">=</span><span class="s1">&#39;Temperature [K]&#39;</span>
+<span class="n">y_label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Resistivity [$\times 10^{-8} \Omega$.m]&#39;</span>
+<span class="n">x_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3500</span><span class="p">]</span>
+<span class="n">y_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+<span class="n">data_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># Concatenate and sort data for fitting</span>
+<span class="n">vars_x</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">vars_y</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">x_data_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vars_x</span><span class="p">]</span>
+<span class="n">y_data_list</span> <span class="o">=</span> <span class="n">vars_y</span>
+
+<span class="c1"># Fit the data</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Curve fit functions for average (ρ), upper (ρu), and lower (ρl)</span>
+<span class="n">rho_avg_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.005e-12</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">5.943e-9</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">6.539e-6</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.031187</span> <span class="o">*</span> <span class="n">T</span> <span class="o">-</span> <span class="mf">1.784</span>
+<span class="n">rho_upper_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.005e-12</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">6e-9</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">6.539e-6</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.0357</span> <span class="o">*</span> <span class="n">T</span> <span class="o">-</span> <span class="mf">1.784</span>
+<span class="n">rho_lower_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.005e-12</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">5.5e-9</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">6.539e-6</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.028</span> <span class="o">*</span> <span class="n">T</span> <span class="o">-</span> <span class="mf">1.784</span>
+
+<span class="c1"># Example usage to generate fitted data</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3500</span><span class="p">,</span><span class="mi">3500</span><span class="p">)</span>
+<span class="n">Y_fit_avg</span> <span class="o">=</span> <span class="n">rho_avg_func</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">Y_fit_upper</span> <span class="o">=</span> <span class="n">rho_upper_func</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">Y_fit_lower</span> <span class="o">=</span> <span class="n">rho_lower_func</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+
+<span class="n">data_plot</span><span class="p">(</span><span class="n">x_data_list</span><span class="p">,</span> <span class="n">y_data_list</span><span class="p">,</span> <span class="n">x_fit_list</span><span class="o">=</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">],</span> <span class="n">y_fit_list</span><span class="o">=</span><span class="p">[</span><span class="n">Y_fit_upper</span><span class="p">,</span> <span class="n">Y_fit_lower</span><span class="p">,</span> <span class="n">Y_fit_avg</span><span class="p">],</span>\
+            <span class="n">x_label</span><span class="o">=</span><span class="n">x_label</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span><span class="n">y_label</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">material_property</span> <span class="o">+</span> <span class="s2">&quot; of &quot;</span> <span class="o">+</span> <span class="n">material_name</span><span class="p">,</span>\
+            <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_lim</span><span class="o">=</span><span class="n">x_lim</span><span class="p">,</span> <span class="n">y_lim</span><span class="o">=</span><span class="n">y_lim</span><span class="p">,</span>\
+            <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data_labels</span><span class="o">=</span><span class="n">data_labels</span><span class="p">,</span> <span class="n">fit_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;fit_upper&quot;</span><span class="p">,</span> <span class="s2">&quot;fit_lower&quot;</span><span class="p">,</span> <span class="s2">&quot;fit_avg&quot;</span><span class="p">],</span>\
+            <span class="n">data_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fit_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker_size</span><span class="o">=</span><span class="n">m_size</span><span class="p">,</span>\
+            <span class="n">fit_line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x_label_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span> <span class="n">y_label_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span> <span class="n">title_font_size</span><span class="o">=</span><span class="n">f_size</span><span class="p">,</span>\
+            <span class="n">legend_font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">legend_num_cols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ElectricalResistivity</span> <span class="o">=</span> <span class="n">rho_avg_func</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WForsytheTempK</th>
+      <th>WForsytheElectricalResistivityx108ohmm</th>
+      <th>WDesiaTempK1</th>
+      <th>WDesiaElectricalResistivityx108ohmm1</th>
+      <th>WRudkinTempK2</th>
+      <th>WRudkinElectricalResistivityx108ohmm2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>300.0</td>
+      <td>7.18</td>
+      <td>10</td>
+      <td>0.000137</td>
+      <td>1540.61</td>
+      <td>39.63</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>400.0</td>
+      <td>10.26</td>
+      <td>15</td>
+      <td>0.000567</td>
+      <td>1810.32</td>
+      <td>51.19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>500.0</td>
+      <td>13.66</td>
+      <td>20</td>
+      <td>0.001960</td>
+      <td>2079.63</td>
+      <td>57.10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>600.0</td>
+      <td>17.23</td>
+      <td>30</td>
+      <td>0.013300</td>
+      <td>2345.26</td>
+      <td>67.27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>800.0</td>
+      <td>24.80</td>
+      <td>40</td>
+      <td>0.054300</td>
+      <td>2610.41</td>
+      <td>81.49</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>900.0</td>
+      <td>28.75</td>
+      <td>50</td>
+      <td>0.141000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1000.0</td>
+      <td>32.73</td>
+      <td>60</td>
+      <td>0.266000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1100.0</td>
+      <td>36.84</td>
+      <td>70</td>
+      <td>0.422000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1200.0</td>
+      <td>40.80</td>
+      <td>80</td>
+      <td>0.606000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1300.0</td>
+      <td>44.90</td>
+      <td>90</td>
+      <td>0.809000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1400.0</td>
+      <td>49.10</td>
+      <td>100</td>
+      <td>1.020000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1500.0</td>
+      <td>53.35</td>
+      <td>200</td>
+      <td>3.180000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1600.0</td>
+      <td>57.60</td>
+      <td>250</td>
+      <td>4.300000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1700.0</td>
+      <td>61.95</td>
+      <td>273</td>
+      <td>4.820000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1800.0</td>
+      <td>66.35</td>
+      <td>300</td>
+      <td>5.440000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1900.0</td>
+      <td>70.75</td>
+      <td>400</td>
+      <td>7.830000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2000.0</td>
+      <td>75.20</td>
+      <td>500</td>
+      <td>10.350000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2100.0</td>
+      <td>79.80</td>
+      <td>600</td>
+      <td>13.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2200.0</td>
+      <td>84.40</td>
+      <td>700</td>
+      <td>15.760000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2300.0</td>
+      <td>89.00</td>
+      <td>800</td>
+      <td>18.610000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2400.0</td>
+      <td>93.65</td>
+      <td>900</td>
+      <td>21.530000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2500.0</td>
+      <td>98.40</td>
+      <td>1000</td>
+      <td>24.510000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2600.0</td>
+      <td>103.20</td>
+      <td>1100</td>
+      <td>27.570000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2700.0</td>
+      <td>107.80</td>
+      <td>1200</td>
+      <td>30.680000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2800.0</td>
+      <td>112.70</td>
+      <td>1300</td>
+      <td>33.840000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2900.0</td>
+      <td>117.50</td>
+      <td>1400</td>
+      <td>37.070000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>3000.0</td>
+      <td>122.50</td>
+      <td>1500</td>
+      <td>40.330000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>3100.0</td>
+      <td>127.40</td>
+      <td>1600</td>
+      <td>43.650000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>3200.0</td>
+      <td>132.20</td>
+      <td>1700</td>
+      <td>47.010000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>3300.0</td>
+      <td>137.30</td>
+      <td>1800</td>
+      <td>50.410000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>3400.0</td>
+      <td>142.20</td>
+      <td>1900</td>
+      <td>53.850000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>3500.0</td>
+      <td>147.20</td>
+      <td>2000</td>
+      <td>57.330000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>3655.0</td>
+      <td>155.00</td>
+      <td>2200</td>
+      <td>64.410000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2400</td>
+      <td>71.630000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2600</td>
+      <td>79.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2800</td>
+      <td>86.510000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3000</td>
+      <td>94.180000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3200</td>
+      <td>102.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3400</td>
+      <td>100.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3600</td>
+      <td>118.300000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="_images/53a8560f439520632d91e84a2e490747be0563dad2675b3c5aefeaa661d04ec0.png" src="_images/53a8560f439520632d91e84a2e490747be0563dad2675b3c5aefeaa661d04ec0.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="W_2%20Fabrication%20%26%20Microstructure.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2 Fabrication &amp; Microstructure</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="W_4%20Mechanical%20Properties.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4 Mechanical Properties</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density">3.1 Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-thermal-expansion">3.2 Coefficient of Thermal Expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-heat">3.3 Specific Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-conductivity">3.4 Thermal Conductivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-diffusivity">3.5 Thermal Diffusivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-emissivity">3.6 Thermal Emissivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-resistivity">3.7 Electrical Resistivity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nasr Ghoniem, Indronil Ghosh, Qihan Fu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
