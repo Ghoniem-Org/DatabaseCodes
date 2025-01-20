@@ -20,11 +20,11 @@
 434,YS,Eurofer,400,plate,14,longitudinal,,,,1075,27,750,90,600,1000,polished
 391,YS,Eurofer,500,plate,14,longitudinal,,,,1075,27,750,90,600,1000,polished
 284,YS,Eurofer,600,plate,14,longitudinal,,,,1075,27,750,90,600,1000,polished
-17.9,YS,Eurofer,17.9,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
-300,YS,Eurofer,300,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
-400,YS,Eurofer,400,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
-500,YS,Eurofer,500,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
-600,YS,Eurofer,600,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
+495,YS,Eurofer,17.9,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
+432,YS,Eurofer,300,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
+417,YS,Eurofer,400,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
+374,YS,Eurofer,500,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
+265,YS,Eurofer,600,plate,14,longitudinal,,,,950,27,750,90,600,1000,polished
 659.8430541,YS,Eurofer,21.03355594,plate,8,longitudinal,7,0,0,979,120,939,240,600,1000,polished
 581.1258956,YS,Eurofer,199.9395625,plate,8,longitudinal,,,,979,120,939,240,600,1000,polished
 507.3763104,YS,Eurofer,400.1208861,plate,8,longitudinal,,,,979,120,939,240,600,1000,polished
@@ -292,3 +292,240 @@
 234.6568272,US,Eurofer,550.1768979,plate,8,transverse,,,,979,120,939,240,700,12000,polished
 161.2024862,US,Eurofer,650.058988,plate,8,transverse,,,,979,120,939,240,700,12000,polished
 123.0856392,US,Eurofer,700,plate,8,transverse,,,,979,120,939,240,700,12000,polished
+25.1120332,TE,Eurofer,20.84456424,plate,8,longitudinal,,,,979,120,939,240,600,1000,polished
+19.63485477,TE,Eurofer,200.5390836,plate,8,longitudinal,,,,979,120,939,240,600,1000,polished
+17.87551867,TE,Eurofer,399.640611,plate,8,longitudinal,,,,979,120,939,240,600,1000,polished
+24.01659751,TE,Eurofer,500.2695418,plate,8,longitudinal,,,,979,120,939,240,600,1000,polished
+24.54771784,TE,Eurofer,500.2695418,plate,8,longitudinal,,,,979,120,939,240,600,1000,polished
+19.76763485,TE,Eurofer,20.12578616,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+17.57676349,TE,Eurofer,23.71967655,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+18.90456432,TE,Eurofer,23.71967655,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+20.69709544,TE,Eurofer,23.71967655,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+23.55186722,TE,Eurofer,25.87601078,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+23.98340249,TE,Eurofer,25.87601078,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+19.46887967,TE,Eurofer,201.2578616,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+20.26556017,TE,Eurofer,201.2578616,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+20.46473029,TE,Eurofer,201.2578616,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+14.02489627,TE,Eurofer,349.3261456,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+17.04564315,TE,Eurofer,399.640611,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+16.04979253,TE,Eurofer,449.9550764,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+22.35684647,TE,Eurofer,500.2695418,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+22.75518672,TE,Eurofer,500.2695418,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+23.45228216,TE,Eurofer,500.2695418,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+19.86721992,TE,Eurofer,550.5840072,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+18.93775934,TE,Eurofer,600.8984726,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+28.36514523,TE,Eurofer,600.1796945,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+29.19502075,TE,Eurofer,600.1796945,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+34.10788382,TE,Eurofer,600.1796945,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+26.17427386,TE,Eurofer,648.3378257,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+21.39419087,TE,Eurofer,698.6522911,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+24.71369295,TE,Eurofer,20.12578616,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+24.01659751,TE,Eurofer,20.12578616,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+21.16182573,TE,Eurofer,25.87601078,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+18.406639,TE,Eurofer,200.5390836,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+18.70539419,TE,Eurofer,200.5390836,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+17.57676349,TE,Eurofer,298.2929021,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+16.74688797,TE,Eurofer,399.640611,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+16.94605809,TE,Eurofer,399.640611,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+20.73029046,TE,Eurofer,500.2695418,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+21.09543568,TE,Eurofer,500.2695418,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+18.00829876,TE,Eurofer,550.5840072,plate,25,longitudinal,,,,979,120,939,240,600,1000,polished
+23.25311203,TE,Eurofer,23.00089847,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+18.70539419,TE,Eurofer,25.87601078,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+19.8340249,TE,Eurofer,201.2578616,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+16.24896266,TE,Eurofer,399.640611,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+18.00829876,TE,Eurofer,399.640611,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+21.42738589,TE,Eurofer,500.2695418,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+22.35684647,TE,Eurofer,500.2695418,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+24.97925311,TE,Eurofer,500.2695418,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+28.39834025,TE,Eurofer,600.8984726,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+31.81742739,TE,Eurofer,600.8984726,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+32.41493776,TE,Eurofer,600.8984726,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+35.93360996,TE,Eurofer,698.6522911,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+23.31950207,TE,Eurofer,25.87601078,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+24.68049793,TE,Eurofer,26.59478886,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+17.94190871,TE,Eurofer,23.71967655,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+19.07053942,TE,Eurofer,23.71967655,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+22.35684647,TE,Eurofer,26.59478886,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+22.92116183,TE,Eurofer,26.59478886,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+16.4813278,TE,Eurofer,299.0116801,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+13.46058091,TE,Eurofer,349.3261456,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+16.91286307,TE,Eurofer,449.9550764,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+17.54356846,TE,Eurofer,500.2695418,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+21.52697095,TE,Eurofer,550.5840072,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+21.42738589,TE,Eurofer,600.8984726,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+23.58506224,TE,Eurofer,648.3378257,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+27.53526971,TE,Eurofer,698.6522911,plate,14,transverse,,,,980,27,760,90,600,1000,polished
+26.59478886,TE,Eurofer,21.95850622,plate,25,transverse,,,,979,120,939,240,600,1000,polished
+26.59478886,TE,Eurofer,21.56016598,plate,25,transverse,,,,979,120,939,240,600,1000,polished
+299.0116801,TE,Eurofer,17.04564315,plate,25,transverse,,,,979,120,939,240,600,1000,polished
+299.0116801,TE,Eurofer,16.87966805,plate,25,transverse,,,,979,120,939,240,600,1000,polished
+20.7966805,TE,Eurofer,25.87601078,bar,100,radial,,,,979,111,739,222 ,600,1000,polished
+15.85062241,TE,Eurofer,299.0116801,bar,100,radial,,,,979,111,739,222 ,600,1000,polished
+33.1120332,TE,Eurofer,600.1796945,bar,100,radial,,,,979,111,739,222 ,600,1000,polished
+43.73443983,TE,Eurofer,600.1796945,bar,100,radial,,,,979,111,739,222 ,600,1000,polished
+21.58091995,TE,Eurofer,24.11170509,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+17.49352643,TE,Eurofer,302.5846617,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+18.01024758,TE,Eurofer,402.8975225,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+22.45358348,TE,Eurofer,503.1020807,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+32.48361618,TE,Eurofer,605.8693967,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+36.12454686,TE,Eurofer,706.5568145,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+23.2,TE,Eurofer,20,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+16.4,TE,Eurofer,300,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+16.7,TE,Eurofer,400,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+25,TE,Eurofer,500,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+28.4,TE,Eurofer,600,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+20.8,TE,Eurofer,20,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+16.8,TE,Eurofer,300,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+16.8,TE,Eurofer,400,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+23.5,TE,Eurofer,500,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+29.3,TE,Eurofer,600,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+23,TE,Eurofer,20,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+20.5,TE,Eurofer,300,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+20.5,TE,Eurofer,400,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+23.2,TE,Eurofer,500,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+29.4,TE,Eurofer,600,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+24,TE,Eurofer,20,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+21.1,TE,Eurofer,300,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+20.9,TE,Eurofer,400,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+25,TE,Eurofer,500,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+30.2,TE,Eurofer,600,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+21.4,TE,Eurofer,20,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+17.3,TE,Eurofer,300,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+17.5,TE,Eurofer,400,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+23.8,TE,Eurofer,500,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+32.7,TE,Eurofer,600,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+22.2,TE,Eurofer,20,bar,100,longitudinal,,,,979,111,739,222 ,580,3300,polished
+18,TE,Eurofer,400,bar,100,longitudinal,,,,979,111,739,222 ,580,3300,polished
+23.4,TE,Eurofer,500,bar,100,longitudinal,,,,979,111,739,222 ,580,3300,polished
+22,TE,Eurofer,20,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+16.8,TE,Eurofer,300,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+18.4,TE,Eurofer,400,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+23.2,TE,Eurofer,500,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+26.4,TE,Eurofer,600,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+20.60667752,TE,Eurofer,19.88928424,plate,8,longitudinal,,,,979,120,939,240,400,12000,polished
+15.31351621,TE,Eurofer,349.8708337,plate,8,longitudinal,,,,979,120,939,240,400,12000,polished
+14.98778331,TE,Eurofer,400.0461083,plate,8,longitudinal,,,,979,120,939,240,400,12000,polished
+18.10260586,TE,Eurofer,500.1706255,plate,8,longitudinal,,,,979,120,939,240,400,12000,polished
+21.502443,TE,Eurofer,550.006878,plate,8,longitudinal,,,,979,120,939,240,400,12000,polished
+22.13355049,TE,Eurofer,650.018405,plate,8,longitudinal,,,,979,120,939,240,400,12000,polished
+19.62947758,TE,Eurofer,19.88928424,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+18.54370167,TE,Eurofer,19.88928424,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+13.35911928,TE,Eurofer,349.8708337,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+16.3450046,TE,Eurofer,450.2213829,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+16.0192717,TE,Eurofer,499.9446142,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+17.6479362,TE,Eurofer,550.1198888,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+21.74674267,TE,Eurofer,650.0184361,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+33.90743715,TE,Eurofer,700.1937107,plate,8,longitudinal,,,,979,120,939,240,550,12000,polished
+23.31658291,TE,Eurofer,20.20998076,plate,8,longitudinal,,,,979,120,939,240,650,2000,polished
+15.6448901,TE,Eurofer,350,plate,8,longitudinal,,,,979,120,939,240,650,2000,polished
+15.40201005,TE,Eurofer,450.1312301,plate,8,longitudinal,,,,979,120,939,240,650,2000,polished
+17.86432161,TE,Eurofer,500.0820175,plate,8,longitudinal,,,,979,120,939,240,650,2000,polished
+17.78894472,TE,Eurofer,550.0328049,plate,8,longitudinal,,,,979,120,939,240,650,2000,polished
+28.16582915,TE,Eurofer,649.9343797,plate,8,longitudinal,,,,979,120,939,240,650,2000,polished
+27.96482412,TE,Eurofer,699.8851671,plate,8,longitudinal,,,,979,120,939,240,650,2000,polished
+22.81407035,TE,Eurofer,20.20998076,plate,8,longitudinal,,,,979,120,939,240,700,2000,polished
+15.77889447,TE,Eurofer,350,plate,8,longitudinal,,,,979,120,939,240,700,2000,polished
+24.690117,TE,Eurofer,450.1312616,plate,8,longitudinal,,,,979,120,939,240,700,2000,polished
+24.28810618,TE,Eurofer,500.1968504,plate,8,longitudinal,,,,979,120,939,240,700,2000,polished
+21.34003299,TE,Eurofer,550.2625233,plate,8,longitudinal,,,,979,120,939,240,700,2000,polished
+25.4702061,TE,Eurofer,649.9344217,plate,8,longitudinal,,,,979,120,939,240,700,2000,polished
+31.61521797,TE,Eurofer,699.9344518,plate,8,longitudinal,,,,979,120,939,240,700,2000,polished
+21.67504162,TE,Eurofer,20.20998076,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+21.44053474,TE,Eurofer,20.20998076,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+14.84087077,TE,Eurofer,350,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+18.09045149,TE,Eurofer,450.1312616,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+16.18090376,TE,Eurofer,500.1968504,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+20.73701715,TE,Eurofer,550.2625233,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+22.51256205,TE,Eurofer,649.9344112,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+41.4740366,TE,Eurofer,700,plate,8,longitudinal,,,,979,120,939,240,650,12000,polished
+30.55276267,TE,Eurofer,20.20998076,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+29.44723503,TE,Eurofer,20.20998076,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+20.83752081,TE,Eurofer,350,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+23.85259619,TE,Eurofer,450.1312616,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+22.84757106,TE,Eurofer,500.1968504,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+23.45728582,TE,Eurofer,549.8950222,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+27.49748728,TE,Eurofer,649.9343797,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+45.20602969,TE,Eurofer,700.0918516,plate,8,longitudinal,,,,979,120,939,240,700,12000,polished
+4.59,UE,Eurofer,20,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+2.7,UE,Eurofer,300,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+2.36,UE,Eurofer,400,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+1.2,UE,Eurofer,500,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+0.84,UE,Eurofer,600,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+2.5,UE,Eurofer,700,bar,100,longitudinal,,,,979,111,739,222 ,600,1000,polished
+5.16,UE,Eurofer,20,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+2.78,UE,Eurofer,300,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+2.03,UE,Eurofer,400,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+1.26,UE,Eurofer,500,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+0.79,UE,Eurofer,600,bar,100,longitudinal,,,,1075,30,750,120,600,1000,polished
+4.97,UE,Eurofer,20,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+2.7,UE,Eurofer,300,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+2.32,UE,Eurofer,400,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+1.19,UE,Eurofer,500,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+0.91,UE,Eurofer,600,plate,14,longitudinal,,,,980,27,760,90,600,1000,polished
+5,UE,Eurofer,20,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+2.51,UE,Eurofer,300,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+2.23,UE,Eurofer,400,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+0.91,UE,Eurofer,500,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+0.61,UE,Eurofer,600,plate,14,longitudinal,,,,1075,30,750,120,600,1000,polished
+6.08,UE,Eurofer,20,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+3.6,UE,Eurofer,300,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+2.88,UE,Eurofer,400,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+1.39,UE,Eurofer,500,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+0.9,UE,Eurofer,600,plate,14,longitudinal,,,,950,30,750,120,600,1000,polished
+5.753012048,UE,Eurofer,20,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+2.018072289,UE,Eurofer,400.5,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+1.144576475,UE,Eurofer,500,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+0.722891566,UE,Eurofer,600.5,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+1.295178884,UE,Eurofer,650.5,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+2.831325301,UE,Eurofer,700,plate,8,transverse,,,,979,120,939,240,600,1000,polished
+5.14,UE,Eurofer,20,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+3.03,UE,Eurofer,300,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+2.67,UE,Eurofer,400,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+1.44,UE,Eurofer,500,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+0.92,UE,Eurofer,600,bar,100,longitudinal,,,,979,111,739,222 ,600,1050,polished
+5.35,UE,Eurofer,20,bar,100,longitudinal,,,,979,111,739,222 ,580,3300,polished
+2.44,UE,Eurofer,400,bar,100,longitudinal,,,,979,111,739,222 ,580,3300,polished
+1.1,UE,Eurofer,500,bar,100,longitudinal,,,,979,111,739,222 ,580,3300,polished
+5.68,UE,Eurofer,20,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+2.77,UE,Eurofer,300,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+2.77,UE,Eurofer,400,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+1.46,UE,Eurofer,500,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+0.65,UE,Eurofer,600,bar,100,longitudinal,,,,1075,111,750,222 ,600,1050,polished
+6.626506024,UE,Eurofer,20,plate,8,transverse,,,,979,120,939,240,400,12000,polished
+2.53463929,UE,Eurofer,350.019989,plate,8,transverse,,,,979,120,939,240,400,12000,polished
+2.26475911,UE,Eurofer,400.2599792,plate,8,transverse,,,,979,120,939,240,400,12000,polished
+1.532229688,UE,Eurofer,499.7799988,plate,8,transverse,,,,979,120,939,240,400,12000,polished
+0.664759257,UE,Eurofer,550.019989,plate,8,transverse,,,,979,120,939,240,400,12000,polished
+0.298494086,UE,Eurofer,650.1799927,plate,8,transverse,,,,979,120,939,240,400,12000,polished
+1.859939759,UE,Eurofer,700.1000366,plate,8,transverse,,,,979,120,939,240,400,12000,polished
+5.993974065,UE,Eurofer,19.5,plate,8,transverse,,,,979,120,939,240,550,12000,polished
+2.000501852,UE,Eurofer,349.9666447,plate,8,transverse,,,,979,120,939,240,550,12000,polished
+2.22540122,UE,Eurofer,450.2333589,plate,8,transverse,,,,979,120,939,240,550,12000,polished
+1.502509707,UE,Eurofer,500.0999618,plate,8,transverse,,,,979,120,939,240,550,12000,polished
+0.490460945,UE,Eurofer,549.9666258,plate,8,transverse,,,,979,120,939,240,550,12000,polished
+0.522589886,UE,Eurofer,650.2333095,plate,8,transverse,,,,979,120,939,240,550,12000,polished
+1.518574177,UE,Eurofer,700.0999735,plate,8,transverse,,,,979,120,939,240,550,12000,polished
+7.255182216,UE,Eurofer,19.91870117,plate,8,transverse,,,,979,120,939,240,650,2000,polished
+2.749538145,UE,Eurofer,350.0000293,plate,8,transverse,,,,979,120,939,240,650,2000,polished
+2.495530264,UE,Eurofer,450.2078512,plate,8,transverse,,,,979,120,939,240,650,2000,polished
+1.436209141,UE,Eurofer,499.9722383,plate,8,transverse,,,,979,120,939,240,650,2000,polished
+0.991293331,UE,Eurofer,550.0276738,plate,8,transverse,,,,979,120,939,240,650,2000,polished
+0.821802407,UE,Eurofer,650.1385447,plate,8,transverse,,,,979,120,939,240,650,2000,polished
+1.796378067,UE,Eurofer,699.9029318,plate,8,transverse,,,,979,120,939,240,650,2000,polished
+9.093690134,UE,Eurofer,19.91870117,plate,8,transverse,,,,979,120,939,240,700,2000,polished
+3.655843743,UE,Eurofer,350.0000293,plate,8,transverse,,,,979,120,939,240,700,2000,polished
+5.856877314,UE,Eurofer,449.949198,plate,8,transverse,,,,979,120,939,240,700,2000,polished
+2.671850825,UE,Eurofer,499.7459412,plate,8,transverse,,,,979,120,939,240,700,2000,polished
+1.377125697,UE,Eurofer,700,plate,8,transverse,,,,979,120,939,240,700,2000,polished
+8.23917229,UE,Eurofer,19.91870117,plate,8,transverse,,,,979,120,939,240,650,12000,polished
+3.60405599,UE,Eurofer,350.0000293,plate,8,transverse,,,,979,120,939,240,650,12000,polished
+3.733528218,UE,Eurofer,450.3048804,plate,8,transverse,,,,979,120,939,240,650,12000,polished
+0.729764555,UE,Eurofer,549.8984058,plate,8,transverse,,,,979,120,939,240,650,12000,polished
+16.42183789,UE,Eurofer,19.91870117,plate,8,transverse,,,,979,120,939,240,700,12000,polished
+15.8262645,UE,Eurofer,19.91870117,plate,8,transverse,,,,979,120,939,240,700,12000,polished
+9.223163785,UE,Eurofer,350.0000293,plate,8,transverse,,,,979,120,939,240,700,12000,polished
+9.171376032,UE,Eurofer,449.949198,plate,8,transverse,,,,979,120,939,240,700,12000,polished
+8.627590397,UE,Eurofer,500.1016626,plate,8,transverse,,,,979,120,939,240,700,12000,polished
+2.775432021,UE,Eurofer,549.8984058,plate,8,transverse,,,,979,120,939,240,700,12000,polished
+0.548503151,UE,Eurofer,700,plate,8,transverse,,,,979,120,939,240,700,12000,polished
