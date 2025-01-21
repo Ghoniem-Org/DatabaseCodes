@@ -97,7 +97,7 @@ def DATAPLOT(
             plt.plot(x_fit, y_fit, label=f"{fit_labels[i]}", color=color, linewidth=fit_line_width)
 
             if conf_int:
-                plt.fill_between(x_fit, y_fit - dely, y_fit + dely, color='blue', alpha=0.2, label=str(sigma) + "σ Conf. Int.")
+                plt.fill_between(x_fit, y_fit - dely[i], y_fit + dely[i], color='blue', alpha=0.2, label=str(sigma) + "σ Conf. Int.")
 
     if scale == 'linear':
         plt.xscale('linear')
